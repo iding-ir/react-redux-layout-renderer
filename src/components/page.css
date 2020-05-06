@@ -76,5 +76,7 @@
 .app-page.is-selected .app-content {
   visibility: visible;
   opacity: 1;
+  height: 100%;
+  overflow: auto;
   transition: all 0.5s 0.5s;
 }
