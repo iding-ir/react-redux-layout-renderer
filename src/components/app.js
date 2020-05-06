@@ -4,6 +4,7 @@ import { bindActionCreators } from "redux";
 
 import "./app.css";
 import { fetchPages } from "../actions/pages";
+import { selectPage } from "../actions/selected";
 import Header from "./header";
 import Pages from "./pages";
 import Footer from "./footer";
@@ -14,13 +15,13 @@ class App extends Component {
   }
 
   render() {
-    const { pages } = this.props;
+    const { pages, selected, selectPage } = this.props;
 
     return (
       <div className="app">
         <Header />
 
-        <Pages pages={pages} />
+        <Pages pages={pages} selected={selected} selectPage={selectPage} />
 
         <Footer />
       </div>
@@ -30,12 +31,14 @@ class App extends Component {
 
 const mapStateToProps = (state) => ({
   pages: state.pages,
+  selected: state.selected,
 });
 
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
       fetchPages,
+      selectPage,
     },
     dispatch
   );

@@ -5,8 +5,17 @@ import Page from "./page";
 
 class Pages extends Component {
   renderPages = () => {
+    const { selected, selectPage } = this.props;
+
     return Object.values(this.props.pages).map((page) => {
-      return <Page key={page.id} page={page} />;
+      return (
+        <Page
+          key={page.id}
+          page={page}
+          selected={selected}
+          selectPage={selectPage}
+        />
+      );
     });
   };
 

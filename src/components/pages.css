@@ -1,7 +1,15 @@
 .app-pages {
+  display: flex;
+  flex-direction: column;
   color: #fffde7;
   font-size: 1rem;
   line-height: 1.5;
   padding: 1rem;
   flex-grow: 10;
+}
+
+@media only screen and (min-width: 840px) {
+  .app-pages {
+    flex-direction: row;
+  }
 }

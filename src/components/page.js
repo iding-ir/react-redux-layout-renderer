@@ -1,16 +1,20 @@
 import React, { Component } from "react";
+import * as classnames from "classnames";
 
 import "./page.css";
 
 class Page extends Component {
   render() {
-    const { id, title, content } = this.props.page;
+    const { page, selected, selectPage } = this.props;
+    const { id, title } = page;
+
+    const pageClasses = classnames("app-page", {
+      "is-selected": id === selected,
+    });
 
     return (
-      <div>
-        <div>{title}</div>
-
-        <div>{content}</div>
+      <div className={pageClasses} onClick={() => selectPage(id)}>
+        <div className="app-title">{title}</div>
       </div>
     );
   }
