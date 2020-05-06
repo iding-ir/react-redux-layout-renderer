@@ -1,13 +1,9 @@
 .app {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-gap: 0;
+  grid-template-columns: [nav-start] auto [nav-end page-start] 1fr [page-end];
+  grid-template-rows: [nav-start] auto [nav-end page-start] 1fr [page-end footer-start] auto [footer-end];
   height: 100%;
   font-family: Roboto;
   background-color: #455a64;
-}
-
-@media only screen and (min-width: 840px) {
-  .app {
-    flex-direction: row;
-  }
 }

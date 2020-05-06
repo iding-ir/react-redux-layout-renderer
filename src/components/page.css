@@ -1,4 +1,6 @@
 .page {
+  grid-column: nav-start/page-end;
+  grid-row: page-start/page-end;
   position: relative;
   flex-grow: 10;
   padding: 1rem;
@@ -7,6 +9,8 @@
 
 @media only screen and (min-width: 840px) {
   .page {
+    grid-column: page-start/page-end;
+    grid-row: nav-start/page-end;
     padding: 1rem 5rem;
   }
 }

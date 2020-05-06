@@ -1,4 +1,6 @@
 .nav {
+  grid-column: nav-start/page-end;
+  grid-row: nav-start/nav-end;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -7,6 +9,8 @@
 
 @media only screen and (min-width: 840px) {
   .nav {
+    grid-column: nav-start/nav-end;
+    grid-row: nav-start/footer-end;
     flex-direction: column;
     border-bottom: none;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
