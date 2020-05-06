@@ -1,0 +1,38 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 6rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.item.is-selected {
+  background-color: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 0 0 #ffb300;
+}
+
+@media only screen and (min-width: 840px) {
+  .item.is-selected {
+    box-shadow: 4px 0 0 0 #ffb300;
+  }
+}
+
+.item:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.item .icon {
+  width: 3rem;
+  height: 3rem;
+  margin-bottom: 0.5rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 80%;
+}
+
+.item .title {
+  color: #fafafa;
+}

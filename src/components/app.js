@@ -5,7 +5,8 @@ import { bindActionCreators } from "redux";
 import "./app.css";
 import { fetchPages } from "../actions/pages";
 import { selectPage } from "../actions/selected";
-import Pages from "./pages";
+import Nav from "./nav";
+import Page from "./page";
 
 class App extends Component {
   componentDidMount() {
@@ -17,7 +18,9 @@ class App extends Component {
 
     return (
       <div className="app">
-        <Pages pages={pages} selected={selected} selectPage={selectPage} />
+        <Nav pages={pages} selected={selected} selectPage={selectPage} />
+
+        <Page pages={pages} selected={selected} />
       </div>
     );
   }
