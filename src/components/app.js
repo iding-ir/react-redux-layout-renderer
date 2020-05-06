@@ -17,13 +17,15 @@ class App extends Component {
 
   render() {
     const {
-      pages,
+      app,
       selected,
       flash,
       selectPage,
       showFlash,
       hideFlash,
     } = this.props;
+
+    const { header, footer, pages } = app;
 
     return (
       <div className="app">
@@ -44,7 +46,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  pages: state.pages,
+  app: state.app,
   selected: state.selected,
   flash: state.flash,
 });

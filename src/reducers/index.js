@@ -1,11 +1,11 @@
 import { combineReducers } from "redux";
 
-import pagesReducer from "./pages";
+import appReducer from "./app";
 import selectedReducer from "./selected";
 import flashReducer from "./flash";
 
 const combinedReducers = combineReducers({
-  pages: pagesReducer,
+  app: appReducer,
   selected: selectedReducer,
   flash: flashReducer,
 });
