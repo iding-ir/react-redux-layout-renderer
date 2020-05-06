@@ -1,0 +1,7 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-family: Roboto;
+  background-color: #455a64;
+}
