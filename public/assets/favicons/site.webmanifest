@@ -1,6 +1,6 @@
 {
-  "name": "Cards Layout",
-  "short_name": "Cards Layout",
+  "name": "Layout Renderer",
+  "short_name": "Layout Renderer",
   "icons": [
     {
       "src": "favicon.ico?v=47B68lwkB7",

@@ -1,12 +1,13 @@
 {
-  "name": "cards-layout",
+  "name": "react-redux-layout-renderer",
   "version": "0.1.0",
-  "description": "A responsive layout.",
+  "description": "A React and Redux responsive layout.",
   "keywords": [
     "CSS3",
     "HTML5",
     "React",
-    "Redux"
+    "Redux",
+    "layout"
   ],
   "author": {
     "name": "Aydin Ghane Kh.",
@@ -16,10 +17,10 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iding-ir/cards-layout.git"
+    "url": "git+https://github.com/iding-ir/react-redux-layout-renderer.git"
   },
   "bugs": {
-    "url": "https://github.com/iding-ir/cards-layout/issues"
+    "url": "https://github.com/iding-ir/react-redux-layout-renderer/issues"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
