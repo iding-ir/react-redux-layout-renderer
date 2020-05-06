@@ -1,6 +1,6 @@
 import _ from "lodash";
 
-import { FETCH_PAGES } from "../constants";
+import { FETCH_DATA } from "../constants";
 
 const INITIAL_STATE = {
   header: {
@@ -13,7 +13,7 @@ const INITIAL_STATE = {
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case FETCH_PAGES:
+    case FETCH_DATA:
       const pages = { ..._.mapKeys(action.payload.pages, "id") };
       const header = action.payload.header;
       const footer = action.payload.footer;

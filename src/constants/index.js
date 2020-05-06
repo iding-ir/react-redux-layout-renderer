@@ -1,4 +1,4 @@
-export const FETCH_PAGES = "FETCH_PAGES";
+export const FETCH_DATA = "FETCH_DATA";
 
 export const SELECT_PAGE = "SELECT_PAGE";
 

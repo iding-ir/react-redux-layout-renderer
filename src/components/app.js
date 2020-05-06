@@ -3,17 +3,17 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import "./app.css";
-import { fetchPages } from "../actions/pages";
+import { fetchData } from "../actions/app";
 import { selectPage } from "../actions/selected";
 import { showFlash, hideFlash } from "../actions/flash";
+import Header from "./header";
 import Nav from "./nav";
 import Page from "./page";
-import Header from "./header";
 import Footer from "./footer";
 
 class App extends Component {
   componentDidMount() {
-    this.props.fetchPages();
+    this.props.fetchData();
   }
 
   render() {
@@ -57,7 +57,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) =>
   bindActionCreators(
     {
-      fetchPages,
+      fetchData,
       selectPage,
       showFlash,
       hideFlash,
