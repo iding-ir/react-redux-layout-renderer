@@ -5,9 +5,7 @@ import { bindActionCreators } from "redux";
 import "./app.css";
 import { fetchPages } from "../actions/pages";
 import { selectPage } from "../actions/selected";
-import Header from "./header";
 import Pages from "./pages";
-import Footer from "./footer";
 
 class App extends Component {
   componentDidMount() {
@@ -19,11 +17,7 @@ class App extends Component {
 
     return (
       <div className="app">
-        <Header />
-
         <Pages pages={pages} selected={selected} selectPage={selectPage} />
-
-        <Footer />
       </div>
     );
   }
