@@ -10,12 +10,14 @@ class Nav extends Component {
     const { pages, selected, selectPage, showFlash, hideFlash } = this.props;
 
     return Object.values(pages).map((page) => {
-      const slug = slugify(page.title, {
+      const { id, title } = page;
+
+      const slug = slugify(title, {
         lower: true,
       });
 
       return (
-        <Link key={page.id} to={`/p/${slug}`}>
+        <Link key={id} to={`/p/${slug}`}>
           <Item
             page={page}
             selected={selected}

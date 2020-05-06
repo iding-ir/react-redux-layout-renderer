@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import slugify from "slugify";
 
 import "./app.css";
 import { fetchData } from "../actions/app";
@@ -31,11 +32,21 @@ class App extends Component {
 
     const render = ({ match }) => {
       const { page: slug } = match.params;
-      const page = Object.values(pages).filter((item) => item.slug === slug)[0];
-      const id = page === undefined ? null : page.id;
+
+      const page = Object.values(pages).filter((item) => {
+        const itemSlug = slugify(item.title, {
+          lower: true,
+        });
+
+        return itemSlug === slug;
+      })[0];
+
+      if (page === undefined) {
+        return;
+      }
 
       setTimeout(() => {
-        selectPage(id);
+        selectPage(page.id);
       }, 0);
     };
 
