@@ -1,0 +1,7 @@
+.footer {
+  grid-column: page-start/page-end;
+  grid-row: footer-start/footer-end;
+  color: #fafafa;
+  text-align: center;
+  padding: 0.5rem;
+}

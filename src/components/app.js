@@ -8,6 +8,7 @@ import { selectPage } from "../actions/selected";
 import { showFlash, hideFlash } from "../actions/flash";
 import Nav from "./nav";
 import Page from "./page";
+import Footer from "./footer";
 
 class App extends Component {
   componentDidMount() {
@@ -35,6 +36,8 @@ class App extends Component {
         />
 
         <Page pages={pages} selected={selected} flash={flash} />
+
+        <Footer />
       </div>
     );
   }

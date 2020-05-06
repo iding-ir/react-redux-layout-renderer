@@ -6,4 +6,5 @@
   height: 100%;
   font-family: Roboto;
   background-color: #455a64;
+  overflow: hidden;
 }
