@@ -5,6 +5,7 @@ import { bindActionCreators } from "redux";
 import "./app.css";
 import { fetchPages } from "../actions/pages";
 import { selectPage } from "../actions/selected";
+import { showFlash, hideFlash } from "../actions/flash";
 import Nav from "./nav";
 import Page from "./page";
 
@@ -14,13 +15,26 @@ class App extends Component {
   }
 
   render() {
-    const { pages, selected, selectPage } = this.props;
+    const {
+      pages,
+      selected,
+      flash,
+      selectPage,
+      showFlash,
+      hideFlash,
+    } = this.props;
 
     return (
       <div className="app">
-        <Nav pages={pages} selected={selected} selectPage={selectPage} />
+        <Nav
+          pages={pages}
+          selected={selected}
+          selectPage={selectPage}
+          showFlash={showFlash}
+          hideFlash={hideFlash}
+        />
 
-        <Page pages={pages} selected={selected} />
+        <Page pages={pages} selected={selected} flash={flash} />
       </div>
     );
   }
@@ -29,6 +43,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   pages: state.pages,
   selected: state.selected,
+  flash: state.flash,
 });
 
 const mapDispatchToProps = (dispatch) =>
@@ -36,6 +51,8 @@ const mapDispatchToProps = (dispatch) =>
     {
       fetchPages,
       selectPage,
+      showFlash,
+      hideFlash,
     },
     dispatch
   );

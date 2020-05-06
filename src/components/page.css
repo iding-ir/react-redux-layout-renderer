@@ -1,6 +1,8 @@
 .page {
+  position: relative;
   flex-grow: 10;
   padding: 1rem;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 840px) {
@@ -21,4 +23,22 @@
   color: #fafafa;
   padding: 1rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.page .flash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #455a64;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.page.is-flashing .flash {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0s;
 }

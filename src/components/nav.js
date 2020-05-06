@@ -5,7 +5,7 @@ import Item from "./item";
 
 class Nav extends Component {
   renderItems = () => {
-    const { pages, selected, selectPage } = this.props;
+    const { pages, selected, selectPage, showFlash, hideFlash } = this.props;
 
     return Object.values(pages).map((page) => (
       <Item
@@ -13,6 +13,8 @@ class Nav extends Component {
         page={page}
         selected={selected}
         selectPage={selectPage}
+        showFlash={showFlash}
+        hideFlash={hideFlash}
       />
     ));
   };

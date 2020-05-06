@@ -5,10 +5,10 @@ import "./item.css";
 
 class Item extends Component {
   render() {
-    const { page, selected, selectPage } = this.props;
+    const { page, selected, selectPage, showFlash, hideFlash } = this.props;
     const { id, title, icon } = page;
 
-    const itemClasses = classnames("item", {
+    const classes = classnames("item", {
       "is-selected": id === selected,
     });
 
@@ -16,8 +16,18 @@ class Item extends Component {
       backgroundImage: `url(${icon})`,
     };
 
+    const onClick = (id) => {
+      selectPage(id);
+
+      showFlash();
+
+      setTimeout(() => {
+        hideFlash();
+      }, 1000);
+    };
+
     return (
-      <div className={itemClasses} onClick={() => selectPage(id)}>
+      <div className={classes} onClick={() => onClick(id)}>
         <div className="icon" style={style}></div>
 
         <div className="title">{title}</div>

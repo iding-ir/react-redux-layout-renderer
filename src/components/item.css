@@ -18,12 +18,12 @@
 }
 
 .item.is-selected {
-  box-shadow: 0 4px 0 0 #ffb300;
+  box-shadow: 0 -4px 0 0 #ffb300 inset;
 }
 
 @media only screen and (min-width: 840px) {
   .item.is-selected {
-    box-shadow: 4px 0 0 0 #ffb300;
+    box-shadow: -4px 0 0 0 #ffb300 inset;
   }
 }
 
