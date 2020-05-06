@@ -6,7 +6,7 @@ import "./page.css";
 class Page extends Component {
   render() {
     const { page, selected, selectPage } = this.props;
-    const { id, title } = page;
+    const { id, title, content } = page;
 
     const pageClasses = classnames("app-page", {
       "is-selected": id === selected,
@@ -15,6 +15,8 @@ class Page extends Component {
     return (
       <div className={pageClasses} onClick={() => selectPage(id)}>
         <div className="app-title">{title}</div>
+
+        <div className="app-content">{content}</div>
       </div>
     );
   }
