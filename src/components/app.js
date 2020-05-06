@@ -14,11 +14,13 @@ class App extends Component {
   }
 
   render() {
+    const { pages } = this.props;
+
     return (
       <div className="app">
         <Header />
 
-        <Pages />
+        <Pages pages={pages} />
 
         <Footer />
       </div>
