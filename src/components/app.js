@@ -39,7 +39,7 @@ class App extends Component {
 
         <Page pages={pages} selected={selected} flash={flash} />
 
-        <Footer />
+        <Footer footer={footer} />
       </div>
     );
   }

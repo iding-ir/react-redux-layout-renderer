@@ -4,7 +4,9 @@ import "./footer.css";
 
 class Footer extends Component {
   render() {
-    return <div className="footer">2020</div>;
+    const { footer } = this.props;
+
+    return <div className="footer">{footer}</div>;
   }
 }
 
