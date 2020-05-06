@@ -8,7 +8,7 @@ class Item extends Component {
     const { page, selected, selectPage } = this.props;
     const { id, title, icon } = page;
 
-    const pageClasses = classnames("item", {
+    const itemClasses = classnames("item", {
       "is-selected": id === selected,
     });
 
@@ -17,7 +17,7 @@ class Item extends Component {
     };
 
     return (
-      <div className={pageClasses} onClick={() => selectPage(id)}>
+      <div className={itemClasses} onClick={() => selectPage(id)}>
         <div className="icon" style={style}></div>
 
         <div className="title">{title}</div>

@@ -1,6 +1,6 @@
 .page {
   flex-grow: 10;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 
 @media only screen and (min-width: 840px) {
@@ -19,4 +19,6 @@
   font-size: 1.6rem;
   line-height: 1.5;
   color: #fafafa;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
