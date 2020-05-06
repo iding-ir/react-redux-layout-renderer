@@ -1,7 +1,8 @@
 .app-header {
   color: #fffde7;
   font-size: 2.4rem;
-  line-height: 4rem;
+  line-height: 6rem;
   padding: 0 1rem;
   text-align: center;
+  border-bottom: 3px solid #fafafa;
 }

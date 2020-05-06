@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .app-page:nth-of-type(5n) {
@@ -33,7 +34,7 @@
 
 .app-page.is-selected {
   justify-content: flex-start;
-  flex-grow: 30;
+  flex-grow: 50;
 }
 
 .app-title {
@@ -42,7 +43,8 @@
   left: 50%;
   width: 100%;
   height: 4rem;
-  padding: 1rem;
+  line-height: 4rem;
+  padding: 0 1rem;
   text-align: center;
   transform: translate(-50%, -50%);
   transition: all 0.5s;
@@ -54,12 +56,16 @@
 }
 
 .app-content {
+  width: 100%;
+  padding: 1rem;
   visibility: hidden;
   opacity: 0;
-  transition: all 0.5s 0.5s;
+  transition: all 0.5s 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .app-page.is-selected .app-content {
   visibility: visible;
   opacity: 1;
+  transition: all 0.5s 0.5s;
 }
