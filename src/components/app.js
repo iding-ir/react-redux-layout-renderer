@@ -8,6 +8,7 @@ import { selectPage } from "../actions/selected";
 import { showFlash, hideFlash } from "../actions/flash";
 import Nav from "./nav";
 import Page from "./page";
+import Header from "./header";
 import Footer from "./footer";
 
 class App extends Component {
@@ -36,6 +37,8 @@ class App extends Component {
           showFlash={showFlash}
           hideFlash={hideFlash}
         />
+
+        <Header header={header} />
 
         <Page pages={pages} selected={selected} flash={flash} />
 
