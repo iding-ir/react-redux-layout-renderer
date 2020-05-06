@@ -1,7 +1,26 @@
 {
   "name": "cards-layout",
   "version": "0.1.0",
-  "private": true,
+  "description": "A responsive layout.",
+  "keywords": [
+    "CSS3",
+    "HTML5",
+    "React",
+    "Redux"
+  ],
+  "author": {
+    "name": "Aydin Ghane Kh.",
+    "email": "aydin.ghane.kh@gmail.com",
+    "url": "http://iding.ir"
+  },
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iding-ir/cards-layout.git"
+  },
+  "bugs": {
+    "url": "https://github.com/iding-ir/cards-layout/issues"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
