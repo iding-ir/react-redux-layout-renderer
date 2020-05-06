@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
+import pagesReducer from "./pages";
+
 const combinedReducers = combineReducers({
-  placeholder: "placeholder",
+  pages: pagesReducer,
 });
 
 export default combinedReducers;
