@@ -6,8 +6,14 @@ import "./page.css";
 class Page extends Component {
   render() {
     const { pages, selected, flash } = this.props;
-    const { title, content } =
-      Object.values(pages).filter((page) => page.id === selected)[0] || {};
+
+    if (selected === null) {
+      return null;
+    }
+
+    const { title, content } = Object.values(pages).filter(
+      (page) => page.id === selected
+    )[0];
 
     const classes = classnames("page", {
       "is-flashing": flash,
