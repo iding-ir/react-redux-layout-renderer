@@ -1,39 +1,48 @@
 .app-page {
   position: relative;
-  color: #fafafa;
+  color: #eeeeee;
   padding: 1rem;
   padding-top: 4rem;
   flex-grow: 10;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   transition: all 0.5s;
   cursor: pointer;
+  flex-grow: 1;
 }
 
-.app-page:nth-of-type(5n) {
-  background-color: #039be5;
+.app-page:not(:first-of-type) {
+  border-top: 3px solid #fafafa;
+}
+
+@media only screen and (min-width: 840px) {
+  .app-page:not(:first-of-type) {
+    border-top: none;
+    border-left: 3px solid #fafafa;
+  }
 }
 
 .app-page:nth-of-type(5n + 1) {
-  background-color: #f4511e;
+  background-color: #1e88e5;
 }
 
 .app-page:nth-of-type(5n + 2) {
-  background-color: #8e24aa;
-}
-
-.app-page:nth-of-type(5n + 3) {
-  background-color: #00897b;
-}
-
-.app-page:nth-of-type(5n + 4) {
   background-color: #d81b60;
 }
 
+.app-page:nth-of-type(5n + 3) {
+  background-color: #5e35b1;
+}
+
+.app-page:nth-of-type(5n + 4) {
+  background-color: #00897b;
+}
+
+.app-page:nth-of-type(5n + 5) {
+  background-color: #f4511e;
+}
+
 .app-page.is-selected {
-  justify-content: flex-start;
   flex-grow: 50;
 }
 
