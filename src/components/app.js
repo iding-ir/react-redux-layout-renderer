@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import "./app.css";
 import { fetchData } from "../actions/app";
@@ -28,22 +29,36 @@ class App extends Component {
 
     const { header, footer, pages } = app;
 
+    const render = ({ match }) => {
+      const { page: slug } = match.params;
+      const page = Object.values(pages).filter((item) => item.slug === slug)[0];
+      const id = page === undefined ? null : page.id;
+
+      setTimeout(() => {
+        selectPage(id);
+      }, 0);
+    };
+
     return (
-      <div className="app">
-        <Nav
-          pages={pages}
-          selected={selected}
-          selectPage={selectPage}
-          showFlash={showFlash}
-          hideFlash={hideFlash}
-        />
+      <Router>
+        <div className="app">
+          <Route path="/p/:page" render={render} />
 
-        <Header header={header} />
+          <Nav
+            pages={pages}
+            selected={selected}
+            selectPage={selectPage}
+            showFlash={showFlash}
+            hideFlash={hideFlash}
+          />
 
-        <Page pages={pages} selected={selected} flash={flash} />
+          <Header header={header} />
 
-        <Footer footer={footer} />
-      </div>
+          <Page pages={pages} selected={selected} flash={flash} />
+
+          <Footer footer={footer} />
+        </div>
+      </Router>
     );
   }
 }
