@@ -14,6 +14,7 @@ class Nav extends Component {
 
       const slug = slugify(title, {
         lower: true,
+        strict: true,
       });
 
       return (

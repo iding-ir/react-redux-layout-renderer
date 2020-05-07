@@ -36,6 +36,7 @@ class App extends Component {
       const page = Object.values(pages).filter((item) => {
         const itemSlug = slugify(item.title, {
           lower: true,
+          strict: true,
         });
 
         return itemSlug === slug;
