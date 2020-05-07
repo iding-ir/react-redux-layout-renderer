@@ -9,4 +9,4 @@ This project was created using React and Redux to demonstrate my front-end skill
 
 ## Demo
 
-[Live demo](https://react-redux-layout-renderer.iding.ir)
+[Live demo](http://react-redux-layout-renderer.iding.ir)
