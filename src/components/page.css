@@ -2,9 +2,9 @@
   grid-column: nav-start/page-end;
   grid-row: page-start/page-end;
   position: relative;
-  flex-grow: 10;
   padding: 1rem;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   background-color: #455a64;
 }
 
@@ -27,7 +27,10 @@
   line-height: 1.5;
   color: #fafafa;
   padding: 1rem 0;
+  flex-grow: 10;
+  overflow: auto;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .page .flash {
