@@ -2,23 +2,24 @@
   grid-column: nav-start/page-end;
   grid-row: page-start/page-end;
   position: relative;
-  padding: 1rem;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   background-color: #455a64;
+  overflow: hidden;
 }
 
 @media only screen and (min-width: 840px) {
   .page {
     grid-column: page-start/page-end;
     grid-row: nav-start/page-end;
-    padding: 1rem 5rem;
+    padding: 0 5rem;
   }
 }
 
 .page .title {
   font-size: 3rem;
-  line-height: 6rem;
+  line-height: 8rem;
   color: #fafafa;
 }
 
@@ -49,4 +50,27 @@
   opacity: 1;
   visibility: visible;
   transition: all 0s;
+}
+
+.page .flash::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: translateY(-100%);
+  transition: all 0.5s;
+}
+
+.page.page.is-flashing .flash::before {
+  transform: translate(0);
+}
+
+@media only screen and (min-width: 840px) {
+  .page .flash::before {
+    transform: translateX(-100%);
+  }
 }
