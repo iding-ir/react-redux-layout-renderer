@@ -5,6 +5,6 @@
   grid-template-rows: [nav-start] auto [nav-end page-start] 1fr [page-end footer-start] auto [footer-end];
   height: 100%;
   font-family: Roboto;
-  background-color: #455a64;
+  background-color: var(--color-lighter);
   overflow: hidden;
 }

@@ -3,8 +3,8 @@
   grid-row: nav-start/nav-end;
   display: flex;
   flex-direction: row;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--fade-light-md);
+  background-color: var(--color-light);
 }
 
 @media only screen and (min-width: 840px) {
@@ -13,6 +13,10 @@
     grid-row: nav-start/footer-end;
     flex-direction: column;
     border-bottom: none;
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid var(--fade-light-md);
   }
+}
+
+.nav a {
+  text-decoration: none;
 }

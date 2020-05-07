@@ -21,13 +21,14 @@
 .header .title,
 .header .description {
   line-height: 1.5;
-  color: #fafafa;
 }
 
 .header .title {
   font-size: 3.2rem;
+  color: var(--color-primary-light);
 }
 
 .header .description {
   font-size: 1.6rem;
+  color: var(--color-secondary-light);
 }

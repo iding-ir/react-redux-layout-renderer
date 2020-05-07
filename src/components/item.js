@@ -13,7 +13,8 @@ class Item extends Component {
     });
 
     const style = {
-      backgroundImage: `url(${icon})`,
+      WebkitMaskImage: `url(${icon})`,
+      maskImage: `url(${icon})`,
     };
 
     const onClick = (id) => {
