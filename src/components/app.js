@@ -35,8 +35,9 @@ class App extends Component {
       menu,
     } = this.props;
 
-    const { header, pages, footer, menu: menuItems } =
-      data[menu.locale] || data[Object.keys(data)[0]];
+    const current = data[menu.locale] || data[Object.keys(data)[0]];
+
+    const { header, pages, footer, menu: menuItems } = current;
 
     const render = ({ match }) => {
       const { page: slug } = match.params;
@@ -80,6 +81,7 @@ class App extends Component {
           <Footer footer={footer} />
 
           <Menu
+            data={data}
             display={menu.visible}
             hideMenu={hideMenu}
             items={menuItems}

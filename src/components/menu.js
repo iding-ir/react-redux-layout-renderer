@@ -7,10 +7,29 @@ import { theme, locale } from "../utils/icons";
 
 class Menu extends Component {
   render() {
-    const { items, display, hideMenu, changeTheme, changeLocale } = this.props;
+    const {
+      data,
+      items,
+      display,
+      hideMenu,
+      changeTheme,
+      changeLocale,
+    } = this.props;
 
     const classes = classnames("menu", {
       "is-visible": display,
+    });
+
+    const themes = [
+      { value: "light", title: "Light" },
+      { value: "dark", title: "Dark" },
+    ];
+
+    const locales = Object.keys(data).map((key) => {
+      return {
+        value: key,
+        title: data[key].locale,
+      };
     });
 
     const renderMenuItems = () => {
@@ -35,20 +54,14 @@ class Menu extends Component {
               <Select
                 image={theme}
                 value="dark"
-                items={[
-                  { value: "light", title: "Light" },
-                  { value: "dark", title: "Dark" },
-                ]}
+                items={themes}
                 onChange={changeTheme}
               />
 
               <Select
                 image={locale}
                 value="en"
-                items={[
-                  { value: "en", title: "English" },
-                  { value: "de", title: "Deutsch" },
-                ]}
+                items={locales}
                 onChange={changeLocale}
               />
             </form>
