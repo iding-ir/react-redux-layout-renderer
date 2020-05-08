@@ -2,7 +2,7 @@
   grid-column: nav-start/page-end;
   grid-row: page-start/page-end;
   position: relative;
-  padding: 0 1rem;
+  padding: 0 var(--padding-md);
   display: flex;
   flex-direction: column;
   background-color: var(--color-lighter);
@@ -11,12 +11,12 @@
   @media only screen and (min-width: 840px) {
     grid-column: page-start/page-end;
     grid-row: nav-start/page-end;
-    padding: 0 5rem;
+    padding: 0 var(--icon-lg);
   }
 
   .title {
     font-size: 3rem;
-    line-height: 8rem;
+    line-height: var(--icon-lg);
     color: var(--color-primary-light);
   }
 
@@ -24,7 +24,7 @@
     font-size: 1.4rem;
     line-height: 1.5;
     color: var(--color-dark);
-    padding: 1rem 0;
+    padding: var(--padding-md) 0;
     flex-grow: 10;
     overflow: auto;
     border-top: 3px solid var(--color-dark);
@@ -40,7 +40,7 @@
     background-color: var(--color-light);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.5s;
+    transition: var(--transition-sm);
 
     &::before {
       content: "";
@@ -52,7 +52,7 @@
       bottom: 0;
       background-color: var(--fade-light-md);
       transform: translateY(-100%);
-      transition: all 0.2s;
+      transition: var(--transition-sm);
 
       @media only screen and (min-width: 840px) {
         transform: translateX(-100%);

@@ -2,7 +2,7 @@
   grid-column: nav-start/page-end;
   grid-row: page-start/page-end;
   flex-grow: 10;
-  padding: 1rem;
+  padding: var(--padding-md);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -12,7 +12,7 @@
   @media only screen and (min-width: 840px) {
     grid-column: page-start/page-end;
     grid-row: nav-start/page-end;
-    padding: 1rem 5rem;
+    padding: var(--padding-md) var(--icon-lg);
   }
 
   .title,
