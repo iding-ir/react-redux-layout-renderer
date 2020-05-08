@@ -9,6 +9,7 @@ const INITIAL_STATE = {
   },
   footer: "",
   pages: [],
+  menu: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {

@@ -5,21 +5,29 @@ import "./menu.css";
 
 class Menu extends Component {
   render() {
-    const { hideMenu } = this.props;
+    const { items, display, hideMenu } = this.props;
 
     const classes = classnames("menu", {
-      "is-visible": this.props.display,
+      "is-visible": display,
     });
+
+    const renderMenuItems = () => {
+      return items.map((item, index) => {
+        const { url, title } = item;
+
+        return (
+          <li key={index}>
+            {url ? <a href={url}>{title}</a> : <span>{title}</span>}
+          </li>
+        );
+      });
+    };
 
     return (
       <div className={classes}>
         <div className="menu-close" onClick={hideMenu}></div>
 
-        <ul className="list">
-          <li>1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
+        <ul className="list">{renderMenuItems()}</ul>
       </div>
     );
   }

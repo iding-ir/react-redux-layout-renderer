@@ -58,9 +58,30 @@
 
 .menu .list li {
   text-align: center;
-  padding: 1rem;
 }
 
 .menu .list li:not(:last-of-type) {
   border-bottom: 1px solid var(--fade-grey-sm);
+}
+
+.menu .list li a,
+.menu .list li span {
+  display: block;
+  font-size: 1.6rem;
+  line-height: 4rem;
+  text-decoration: none;
+}
+
+.menu .list li a {
+  color: var(--color-secondary-light);
+  transition: all 0.3s;
+}
+
+.menu .list li a:hover {
+  color: var(--color-secondary-dark);
+  background-color: var(--fade-light-md);
+}
+
+.menu .list li span {
+  color: var(--color-dark);
 }
