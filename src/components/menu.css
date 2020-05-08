@@ -47,7 +47,7 @@
   background-color: #ffffff;
 }
 
-.menu .list {
+.menu .menu-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -56,31 +56,31 @@
   margin: 0 auto;
 }
 
-.menu .list li {
+.menu .menu-container li {
   text-align: center;
 }
 
-.menu .list li:not(:last-of-type) {
+.menu .menu-container li:not(:last-of-type) {
   border-bottom: 1px solid var(--color-dark);
 }
 
-.menu .list li a,
-.menu .list li span {
+.menu .menu-container li a,
+.menu .menu-container li span {
   display: block;
   font-size: 1.6rem;
   line-height: 4rem;
   text-decoration: none;
 }
 
-.menu .list li a {
+.menu .menu-container li a {
   color: var(--color-primary-light);
   transition: all 0.3s;
 }
 
-.menu .list li a:hover {
+.menu .menu-container li a:hover {
   background-color: var(--fade-light-md);
 }
 
-.menu .list li span {
+.menu .menu-container li span {
   color: var(--color-dark);
 }

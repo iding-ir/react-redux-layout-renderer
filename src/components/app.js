@@ -8,7 +8,7 @@ import "./app.css";
 import { fetchData } from "../actions/data";
 import { selectPage } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
-import { showMenu, hideMenu } from "../actions/menu";
+import { showMenu, hideMenu, changeTheme, changeLocale } from "../actions/menu";
 import Header from "./header";
 import Nav from "./nav";
 import Page from "./page";
@@ -30,6 +30,8 @@ class App extends Component {
       hideFlash,
       showMenu,
       hideMenu,
+      changeTheme,
+      changeLocale,
       menu,
     } = this.props;
 
@@ -58,7 +60,7 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="app">
+        <div className="app" theme={menu.theme}>
           <Route path="/p/:page" render={render} />
 
           <Nav
@@ -76,7 +78,13 @@ class App extends Component {
 
           <Footer footer={footer} />
 
-          <Menu display={menu} hideMenu={hideMenu} items={menuItems} />
+          <Menu
+            display={menu.visible}
+            hideMenu={hideMenu}
+            items={menuItems}
+            changeTheme={changeTheme}
+            changeLocale={changeLocale}
+          />
         </div>
       </Router>
     );
@@ -99,6 +107,8 @@ const mapDispatchToProps = (dispatch) =>
       hideFlash,
       showMenu,
       hideMenu,
+      changeTheme,
+      changeLocale,
     },
     dispatch
   );

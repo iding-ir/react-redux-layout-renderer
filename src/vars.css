@@ -55,7 +55,7 @@
   --fade-light-lg: rgba(255, 255, 255, 0.6);
 }
 
-:root .dark {
+:root [theme="dark"] {
   --color-primary-light: #0097e6;
   --color-primary-dark: #00a8ff;
   --color-secondary-light: #c23616;

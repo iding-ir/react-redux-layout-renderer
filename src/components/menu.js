@@ -4,8 +4,15 @@ import * as classnames from "classnames";
 import "./menu.css";
 
 class Menu extends Component {
+  constructor(props) {
+    super(props);
+
+    this.theme = React.createRef();
+    this.locale = React.createRef();
+  }
+
   render() {
-    const { items, display, hideMenu } = this.props;
+    const { items, display, hideMenu, changeTheme, changeLocale } = this.props;
 
     const classes = classnames("menu", {
       "is-visible": display,
@@ -27,7 +34,35 @@ class Menu extends Component {
       <div className={classes}>
         <div className="menu-close" onClick={hideMenu}></div>
 
-        <ul className="list">{renderMenuItems()}</ul>
+        <div className="menu-container">
+          <div className="settings">
+            <form>
+              <div className="form-group">
+                <select
+                  ref={this.theme}
+                  onChange={() => changeTheme(this.theme.current.value)}
+                >
+                  <option value="light">Light</option>
+
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                <select
+                  ref={this.locale}
+                  onChange={() => changeLocale(this.locale.current.value)}
+                >
+                  <option value="en">English</option>
+
+                  <option value="de">German</option>
+                </select>
+              </div>
+            </form>
+          </div>
+
+          <ul>{renderMenuItems()}</ul>
+        </div>
       </div>
     );
   }
