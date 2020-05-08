@@ -3,13 +3,15 @@ import * as classnames from "classnames";
 
 import "./menu.scss";
 import Select from "./select";
-import { theme, language } from "../utils/icons";
+import { theme as themeImage, language as languageImage } from "../utils/icons";
 
 class Menu extends Component {
   render() {
     const {
       data,
       items,
+      theme,
+      language,
       display,
       hideMenu,
       changeTheme,
@@ -52,15 +54,15 @@ class Menu extends Component {
           <div className="settings">
             <form>
               <Select
-                image={theme}
-                value="dark"
+                image={themeImage}
+                value={theme}
                 items={themes}
                 onChange={changeTheme}
               />
 
               <Select
-                image={language}
-                value="en"
+                image={languageImage}
+                value={language}
                 items={languages}
                 onChange={changeLanguage}
               />

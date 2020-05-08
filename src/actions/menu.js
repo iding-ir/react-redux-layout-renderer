@@ -18,6 +18,8 @@ export const hideMenu = () => {
 };
 
 export const changeTheme = (theme) => {
+  localStorage.setItem("theme", theme);
+
   return {
     type: CHANGE_THEME,
     payload: theme,
@@ -25,6 +27,8 @@ export const changeTheme = (theme) => {
 };
 
 export const changeLanguage = (language) => {
+  localStorage.setItem("language", language);
+
   return {
     type: CHANGE_LANGUAGE,
     payload: language,

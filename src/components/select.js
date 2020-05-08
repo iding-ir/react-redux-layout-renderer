@@ -9,14 +9,8 @@ class Select extends Component {
     this.select = React.createRef();
   }
 
-  componentDidMount() {
-    const { value, onChange } = this.props;
-
-    onChange(value);
-  }
-
   render() {
-    const { items, image, onChange } = this.props;
+    const { items, image, value, onChange } = this.props;
 
     const renderOption = () => {
       return items.map((item, index) => {
@@ -39,6 +33,7 @@ class Select extends Component {
         <div className="image" style={style}></div>
 
         <select
+          value={value}
           ref={this.select}
           onChange={() => {
             onChange(this.select.current.value);

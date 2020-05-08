@@ -23,7 +23,19 @@ import Menu from "./menu";
 class App extends Component {
   componentDidMount() {
     this.props.fetchData();
+
+    this.fetchStorage();
   }
+
+  fetchStorage = () => {
+    const { changeTheme, changeLanguage } = this.props;
+
+    const theme = localStorage.getItem("theme");
+    changeTheme(theme);
+
+    const language = localStorage.getItem("language");
+    changeLanguage(language);
+  };
 
   render() {
     const {
@@ -95,6 +107,8 @@ class App extends Component {
             display={menu.visible}
             hideMenu={hideMenu}
             items={menuItems}
+            theme={menu.theme}
+            language={menu.language}
             changeTheme={changeTheme}
             changeLanguage={changeLanguage}
           />
