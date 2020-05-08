@@ -1,18 +1,22 @@
 .select {
   margin-bottom: var(--padding-md);
   display: flex;
-  height: 4rem;
+  height: var(--icon-md);
+  background-position: center right var(--padding-lg);
+  background-size: 2rem;
+  background-repeat: no-repeat;
 
   select {
     font-size: 1.2rem;
-    line-height: 4rem;
+    line-height: var(--icon-md);
     width: 100%;
-    padding: 0 var(--padding-md);
+    padding: 0 var(--padding-lg);
     border: none;
     outline: none;
     color: var(--color-dark);
     background-color: var(--fade-dark-sm);
     appearance: none;
+    cursor: pointer;
 
     option {
       background-color: var(--color-lighter);

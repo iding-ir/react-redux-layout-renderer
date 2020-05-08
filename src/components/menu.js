@@ -3,6 +3,7 @@ import * as classnames from "classnames";
 
 import "./menu.scss";
 import Select from "./select";
+import { theme, locale } from "../utils/icons";
 
 class Menu extends Component {
   render() {
@@ -32,6 +33,7 @@ class Menu extends Component {
           <div className="settings">
             <form>
               <Select
+                image={theme}
                 value="dark"
                 items={[
                   { value: "light", title: "Light" },
@@ -41,6 +43,7 @@ class Menu extends Component {
               />
 
               <Select
+                image={locale}
                 value="en"
                 items={[
                   { value: "en", title: "English" },

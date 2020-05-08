@@ -16,7 +16,7 @@ class Select extends Component {
   }
 
   render() {
-    const { items, onChange } = this.props;
+    const { items, image, onChange } = this.props;
 
     const renderOption = () => {
       return items.map((item, index) => {
@@ -30,8 +30,12 @@ class Select extends Component {
       });
     };
 
+    const style = {
+      backgroundImage: `url(${image})`,
+    };
+
     return (
-      <div className="select">
+      <div className="select" style={style}>
         <select
           ref={this.select}
           onChange={() => {
