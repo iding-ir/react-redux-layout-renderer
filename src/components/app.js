@@ -6,7 +6,7 @@ import slugify from "slugify";
 
 import "./app.scss";
 import { fetchData } from "../actions/data";
-import { selectPage } from "../actions/page";
+import { selectPage, hideMore, toggleMore } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
 import {
   showMenu,
@@ -29,8 +29,11 @@ class App extends Component {
     const {
       data,
       selectedPage,
+      more,
       flash,
       selectPage,
+      hideMore,
+      toggleMore,
       showFlash,
       hideFlash,
       showMenu,
@@ -67,16 +70,18 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="app" theme={menu.theme}>
+        <div className="app" theme={menu.theme} onClick={hideMore}>
           <Route path="/p/:page" render={render} />
 
           <Nav
             pages={pages}
             selectedPage={selectedPage}
+            more={more}
             selectPage={selectPage}
             showFlash={showFlash}
             hideFlash={hideFlash}
             showMenu={showMenu}
+            toggleMore={toggleMore}
           />
 
           <Header header={header} />
@@ -102,6 +107,7 @@ class App extends Component {
 const mapStateToProps = (state) => ({
   data: state.data,
   selectedPage: state.page.selected,
+  more: state.page.more,
   flash: state.flash,
   menu: state.menu,
 });
@@ -111,6 +117,8 @@ const mapDispatchToProps = (dispatch) =>
     {
       fetchData,
       selectPage,
+      hideMore,
+      toggleMore,
       showFlash,
       hideFlash,
       showMenu,

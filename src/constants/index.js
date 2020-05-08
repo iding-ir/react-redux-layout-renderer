@@ -9,3 +9,7 @@ export const SHOW_MENU = "SHOW_MENU";
 export const HIDE_MENU = "HIDE_MENU";
 export const CHANGE_THEME = "CHANGE_THEME";
 export const CHANGE_LANGUAGE = "CHANGE_LANGUAGE";
+
+export const SHOW_MORE = "SHOW_MORE";
+export const HIDE_MORE = "HIDE_MORE";
+export const TOGGLE_MORE = "TOGGLE_MORE";
