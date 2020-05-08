@@ -1,6 +1,6 @@
 {
   "name": "react-redux-layout-renderer",
-  "version": "0.7",
+  "version": "0.7.0",
   "description": "A React and Redux responsive layout.",
   "keywords": [
     "CSS3",

@@ -39,20 +39,20 @@
   --box-shadow-inset-lg: 0px 0px 4px inset rgba(0, 0, 0, 0.3);
 
   --fade-dark-sm: rgba(0, 0, 0, 0.1);
-  --fade-dark-md: rgba(0, 0, 0, 0.2);
-  --fade-dark-lg: rgba(0, 0, 0, 0.3);
+  --fade-dark-md: rgba(0, 0, 0, 0.3);
+  --fade-dark-lg: rgba(0, 0, 0, 0.5);
 
-  --fade-grey-sm: rgba(140, 140, 140, 0.4);
-  --fade-grey-md: rgba(140, 140, 140, 0.5);
-  --fade-grey-lg: rgba(140, 140, 140, 0.6);
+  --fade-grey-sm: rgba(140, 140, 140, 0.1);
+  --fade-grey-md: rgba(140, 140, 140, 0.3);
+  --fade-grey-lg: rgba(140, 140, 140, 0.5);
 
-  --fade-silver-sm: rgba(240, 240, 240, 0.4);
-  --fade-silver-md: rgba(240, 240, 240, 0.5);
-  --fade-silver-lg: rgba(240, 240, 240, 0.6);
+  --fade-silver-sm: rgba(240, 240, 240, 0.1);
+  --fade-silver-md: rgba(240, 240, 240, 0.3);
+  --fade-silver-lg: rgba(240, 240, 240, 0.5);
 
-  --fade-light-sm: rgba(255, 255, 255, 0.4);
-  --fade-light-md: rgba(255, 255, 255, 0.5);
-  --fade-light-lg: rgba(255, 255, 255, 0.6);
+  --fade-light-sm: rgba(255, 255, 255, 0.1);
+  --fade-light-md: rgba(255, 255, 255, 0.3);
+  --fade-light-lg: rgba(255, 255, 255, 0.5);
 }
 
 :root [theme="dark"] {
@@ -66,19 +66,19 @@
   --color-dark: #eeeeee;
   --color-darker: #fafafa;
 
-  --fade-dark-sm: rgba(255, 255, 255, 0.4);
-  --fade-dark-md: rgba(255, 255, 255, 0.5);
-  --fade-dark-lg: rgba(255, 255, 255, 0.6);
+  --fade-dark-sm: rgba(255, 255, 255, 0.1);
+  --fade-dark-md: rgba(255, 255, 255, 0.3);
+  --fade-dark-lg: rgba(255, 255, 255, 0.5);
 
-  --fade-grey-sm: rgba(240, 240, 240, 0.4);
-  --fade-grey-md: rgba(240, 240, 240, 0.5);
-  --fade-grey-lg: rgba(240, 240, 240, 0.6);
+  --fade-grey-sm: rgba(240, 240, 240, 0.1);
+  --fade-grey-md: rgba(240, 240, 240, 0.3);
+  --fade-grey-lg: rgba(240, 240, 240, 0.5);
 
-  --fade-silver-sm: rgba(140, 140, 140, 0.4);
-  --fade-silver-md: rgba(140, 140, 140, 0.5);
-  --fade-silver-lg: rgba(140, 140, 140, 0.6);
+  --fade-silver-sm: rgba(140, 140, 140, 0.1);
+  --fade-silver-md: rgba(140, 140, 140, 0.3);
+  --fade-silver-lg: rgba(140, 140, 140, 0.5);
 
   --fade-light-sm: rgba(0, 0, 0, 0.1);
-  --fade-light-md: rgba(0, 0, 0, 0.2);
-  --fade-light-lg: rgba(0, 0, 0, 0.3);
+  --fade-light-md: rgba(0, 0, 0, 0.3);
+  --fade-light-lg: rgba(0, 0, 0, 0.5);
 }
