@@ -1,6 +1,6 @@
 {
   "en": {
-    "locale": "English",
+    "language": "English",
     "header": {
       "title": "[EN] Lorem Ipsum",
       "description": "[EN] Lorem ipsum dolor sit amet"
@@ -70,7 +70,7 @@
     ]
   },
   "de": {
-    "locale": "Deutsch",
+    "language": "Deutsch",
     "header": {
       "title": "[DE] Lorem Ipsum",
       "description": "[DE] Lorem ipsum dolor sit amet"

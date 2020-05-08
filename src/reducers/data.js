@@ -2,7 +2,7 @@ import { FETCH_DATA } from "../constants";
 
 const INITIAL_STATE = [
   {
-    locale: "",
+    language: "",
     header: {
       title: "",
       description: "",

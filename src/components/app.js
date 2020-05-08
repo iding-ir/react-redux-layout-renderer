@@ -8,7 +8,12 @@ import "./app.scss";
 import { fetchData } from "../actions/data";
 import { selectPage } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
-import { showMenu, hideMenu, changeTheme, changeLocale } from "../actions/menu";
+import {
+  showMenu,
+  hideMenu,
+  changeTheme,
+  changeLanguage,
+} from "../actions/menu";
 import Header from "./header";
 import Nav from "./nav";
 import Page from "./page";
@@ -31,11 +36,11 @@ class App extends Component {
       showMenu,
       hideMenu,
       changeTheme,
-      changeLocale,
+      changeLanguage,
       menu,
     } = this.props;
 
-    const current = data[menu.locale] || data[Object.keys(data)[0]];
+    const current = data[menu.language] || data[Object.keys(data)[0]];
 
     const { header, pages, footer, menu: menuItems } = current;
 
@@ -86,7 +91,7 @@ class App extends Component {
             hideMenu={hideMenu}
             items={menuItems}
             changeTheme={changeTheme}
-            changeLocale={changeLocale}
+            changeLanguage={changeLanguage}
           />
         </div>
       </Router>
@@ -111,7 +116,7 @@ const mapDispatchToProps = (dispatch) =>
       showMenu,
       hideMenu,
       changeTheme,
-      changeLocale,
+      changeLanguage,
     },
     dispatch
   );

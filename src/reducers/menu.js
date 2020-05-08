@@ -2,13 +2,13 @@ import {
   SHOW_MENU,
   HIDE_MENU,
   CHANGE_THEME,
-  CHANGE_LOCALE,
+  CHANGE_LANGUAGE,
 } from "../constants";
 
 const INITIAL_STATE = {
   visible: false,
   theme: null,
-  locale: null,
+  language: null,
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -19,8 +19,8 @@ const reducer = (state = INITIAL_STATE, action) => {
       return { ...state, visible: false };
     case CHANGE_THEME:
       return { ...state, theme: action.payload };
-    case CHANGE_LOCALE:
-      return { ...state, locale: action.payload };
+    case CHANGE_LANGUAGE:
+      return { ...state, language: action.payload };
     default:
       return state;
   }

@@ -3,7 +3,7 @@ import * as classnames from "classnames";
 
 import "./menu.scss";
 import Select from "./select";
-import { theme, locale } from "../utils/icons";
+import { theme, language } from "../utils/icons";
 
 class Menu extends Component {
   render() {
@@ -13,7 +13,7 @@ class Menu extends Component {
       display,
       hideMenu,
       changeTheme,
-      changeLocale,
+      changeLanguage,
     } = this.props;
 
     const classes = classnames("menu", {
@@ -25,10 +25,10 @@ class Menu extends Component {
       { value: "dark", title: "Dark" },
     ];
 
-    const locales = Object.keys(data).map((key) => {
+    const languages = Object.keys(data).map((key) => {
       return {
         value: key,
-        title: data[key].locale,
+        title: data[key].language,
       };
     });
 
@@ -59,10 +59,10 @@ class Menu extends Component {
               />
 
               <Select
-                image={locale}
+                image={language}
                 value="en"
-                items={locales}
-                onChange={changeLocale}
+                items={languages}
+                onChange={changeLanguage}
               />
             </form>
           </div>

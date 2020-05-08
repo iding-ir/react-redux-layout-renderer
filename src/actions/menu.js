@@ -2,7 +2,7 @@ import {
   SHOW_MENU,
   HIDE_MENU,
   CHANGE_THEME,
-  CHANGE_LOCALE,
+  CHANGE_LANGUAGE,
 } from "../constants";
 
 export const showMenu = () => {
@@ -24,9 +24,9 @@ export const changeTheme = (theme) => {
   };
 };
 
-export const changeLocale = (locale) => {
+export const changeLanguage = (language) => {
   return {
-    type: CHANGE_LOCALE,
-    payload: locale,
+    type: CHANGE_LANGUAGE,
+    payload: language,
   };
 };
