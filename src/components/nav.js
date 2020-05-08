@@ -32,7 +32,15 @@ class Nav extends Component {
   };
 
   render() {
-    return <div className="nav">{this.renderItems()}</div>;
+    const { showMenu } = this.props;
+
+    return (
+      <div className="nav">
+        <div className="menu-open" onClick={showMenu}></div>
+
+        {this.renderItems()}
+      </div>
+    );
   }
 }
 

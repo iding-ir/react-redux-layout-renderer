@@ -8,10 +8,12 @@ import "./app.css";
 import { fetchData } from "../actions/app";
 import { selectPage } from "../actions/selected";
 import { showFlash, hideFlash } from "../actions/flash";
+import { showMenu, hideMenu } from "../actions/menu";
 import Header from "./header";
 import Nav from "./nav";
 import Page from "./page";
 import Footer from "./footer";
+import Menu from "./menu";
 
 class App extends Component {
   componentDidMount() {
@@ -26,9 +28,12 @@ class App extends Component {
       selectPage,
       showFlash,
       hideFlash,
+      showMenu,
+      hideMenu,
+      menu,
     } = this.props;
 
-    const { header, footer, pages } = app;
+    const { header, pages, footer, menu: menuItems } = app;
 
     const render = ({ match }) => {
       const { page: slug } = match.params;
@@ -62,6 +67,7 @@ class App extends Component {
             selectPage={selectPage}
             showFlash={showFlash}
             hideFlash={hideFlash}
+            showMenu={showMenu}
           />
 
           <Header header={header} />
@@ -69,6 +75,8 @@ class App extends Component {
           <Page pages={pages} selected={selected} flash={flash} />
 
           <Footer footer={footer} />
+
+          <Menu display={menu} hideMenu={hideMenu} items={menuItems} />
         </div>
       </Router>
     );
@@ -79,6 +87,7 @@ const mapStateToProps = (state) => ({
   app: state.app,
   selected: state.selected,
   flash: state.flash,
+  menu: state.menu,
 });
 
 const mapDispatchToProps = (dispatch) =>
@@ -88,6 +97,8 @@ const mapDispatchToProps = (dispatch) =>
       selectPage,
       showFlash,
       hideFlash,
+      showMenu,
+      hideMenu,
     },
     dispatch
   );

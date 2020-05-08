@@ -1,8 +1,8 @@
 import { FETCH_DATA } from "../constants";
-import pages from "../apis/pages";
+import data from "../apis/data";
 
 export const fetchData = () => async (dispatch) => {
-  const response = await pages.get("/db.json");
+  const response = await data.get("/db.json");
 
   dispatch({ type: FETCH_DATA, payload: response.data });
 };

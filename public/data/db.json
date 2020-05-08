@@ -4,6 +4,24 @@
     "description": "Lorem ipsum dolor sit amet"
   },
   "footer": "Nam ornare tortor enim",
+  "menu": [
+    {
+      "title": "Curabitur",
+      "url": "#"
+    },
+    {
+      "title": "Habitant",
+      "url": "#"
+    },
+    {
+      "title": "Dolore",
+      "url": "#"
+    },
+    {
+      "title": "Fusce",
+      "url": "#"
+    }
+  ],
   "pages": [
     {
       "id": 1,
