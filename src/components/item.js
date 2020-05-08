@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as classnames from "classnames";
 
-import "./item.css";
+import "./item.scss";
 
 class Item extends Component {
   render() {

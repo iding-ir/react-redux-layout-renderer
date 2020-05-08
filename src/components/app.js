@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { HashRouter as Router, Route } from "react-router-dom";
 import slugify from "slugify";
 
-import "./app.css";
+import "./app.scss";
 import { fetchData } from "../actions/data";
 import { selectPage } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";

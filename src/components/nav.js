@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import slugify from "slugify";
 
-import "./nav.css";
+import "./nav.scss";
 import Item from "./item";
 
 class Nav extends Component {

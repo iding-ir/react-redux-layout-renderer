@@ -8,27 +8,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
 
-@media only screen and (min-width: 840px) {
-  .header {
+  @media only screen and (min-width: 840px) {
     grid-column: page-start/page-end;
     grid-row: nav-start/page-end;
     padding: 1rem 5rem;
   }
-}
 
-.header .title,
-.header .description {
-  line-height: 1.5;
-}
+  .title,
+  .description {
+    line-height: 1.5;
+  }
 
-.header .title {
-  font-size: 3.2rem;
-  color: var(--color-primary-light);
-}
+  .title {
+    font-size: 3.2rem;
+    color: var(--color-primary-light);
+  }
 
-.header .description {
-  font-size: 1.6rem;
-  color: var(--color-secondary-light);
+  .description {
+    font-size: 1.6rem;
+    color: var(--color-secondary-light);
+  }
 }

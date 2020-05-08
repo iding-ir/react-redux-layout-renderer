@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as classnames from "classnames";
 
-import "./page.css";
+import "./page.scss";
 
 class Page extends Component {
   render() {
