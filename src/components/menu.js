@@ -2,15 +2,9 @@ import React, { Component } from "react";
 import * as classnames from "classnames";
 
 import "./menu.scss";
+import Select from "./select";
 
 class Menu extends Component {
-  constructor(props) {
-    super(props);
-
-    this.theme = React.createRef();
-    this.locale = React.createRef();
-  }
-
   render() {
     const { items, display, hideMenu, changeTheme, changeLocale } = this.props;
 
@@ -37,27 +31,23 @@ class Menu extends Component {
         <div className="menu-container">
           <div className="settings">
             <form>
-              <div className="form-group">
-                <select
-                  ref={this.theme}
-                  onChange={() => changeTheme(this.theme.current.value)}
-                >
-                  <option value="light">Light</option>
+              <Select
+                value="dark"
+                items={[
+                  { value: "light", title: "Light" },
+                  { value: "dark", title: "Dark" },
+                ]}
+                onChange={changeTheme}
+              />
 
-                  <option value="dark">Dark</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                <select
-                  ref={this.locale}
-                  onChange={() => changeLocale(this.locale.current.value)}
-                >
-                  <option value="en">English</option>
-
-                  <option value="de">German</option>
-                </select>
-              </div>
+              <Select
+                value="en"
+                items={[
+                  { value: "en", title: "English" },
+                  { value: "de", title: "Deutsch" },
+                ]}
+                onChange={changeLocale}
+              />
             </form>
           </div>
 

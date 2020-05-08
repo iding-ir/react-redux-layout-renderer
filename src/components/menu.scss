@@ -52,28 +52,6 @@
     height: 100%;
     margin: 0 auto;
 
-    .form-group {
-      margin-bottom: var(--padding-md);
-      display: flex;
-      height: 4rem;
-
-      select {
-        font-size: 1.2rem;
-        line-height: 4rem;
-        width: 100%;
-        padding: 0 var(--padding-md);
-        border: none;
-        outline: none;
-        color: var(--color-dark);
-        background-color: var(--fade-dark-sm);
-        appearance: none;
-
-        option {
-          background-color: var(--color-lighter);
-        }
-      }
-    }
-
     ul {
       li {
         text-align: center;
