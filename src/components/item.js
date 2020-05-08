@@ -5,11 +5,11 @@ import "./item.scss";
 
 class Item extends Component {
   render() {
-    const { page, selected, selectPage, showFlash, hideFlash } = this.props;
+    const { page, selectedPage, selectPage, showFlash, hideFlash } = this.props;
     const { id, title, icon } = page;
 
     const classes = classnames("item", {
-      "is-selected": id === selected,
+      "is-selected": id === selectedPage,
     });
 
     const style = {
