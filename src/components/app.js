@@ -35,7 +35,8 @@ class App extends Component {
       menu,
     } = this.props;
 
-    const { header, pages, footer, menu: menuItems } = data;
+    const { header, pages, footer, menu: menuItems } =
+      data[menu.locale] || data[Object.keys(data)[0]];
 
     const render = ({ match }) => {
       const { page: slug } = match.params;

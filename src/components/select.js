@@ -19,10 +19,14 @@ class Select extends Component {
     const { items, onChange } = this.props;
 
     const renderOption = () => {
-      return items.map((item) => {
+      return items.map((item, index) => {
         const { value, title } = item;
 
-        return <option value={value}>{title}</option>;
+        return (
+          <option key={index} value={value}>
+            {title}
+          </option>
+        );
       });
     };
 
