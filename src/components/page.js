@@ -5,14 +5,14 @@ import "./page.css";
 
 class Page extends Component {
   render() {
-    const { pages, selected, flash } = this.props;
+    const { pages, selectedPage, flash } = this.props;
 
-    if (selected === null) {
+    if (selectedPage === null) {
       return null;
     }
 
-    const { title, content } = Object.values(pages).filter(
-      (page) => page.id === selected
+    const { title, content } = pages.filter(
+      (page) => page.id === selectedPage
     )[0];
 
     const classes = classnames("page", {

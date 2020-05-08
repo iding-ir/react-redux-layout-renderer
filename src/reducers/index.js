@@ -1,13 +1,13 @@
 import { combineReducers } from "redux";
 
-import appReducer from "./app";
-import selectedReducer from "./selected";
+import dataReducer from "./data";
+import pageReducer from "./page";
 import flashReducer from "./flash";
 import menuReducer from "./menu";
 
 const combinedReducers = combineReducers({
-  app: appReducer,
-  selected: selectedReducer,
+  data: dataReducer,
+  page: pageReducer,
   flash: flashReducer,
   menu: menuReducer,
 });

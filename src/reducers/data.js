@@ -1,5 +1,3 @@
-import _ from "lodash";
-
 import { FETCH_DATA } from "../constants";
 
 const INITIAL_STATE = {
@@ -15,12 +13,7 @@ const INITIAL_STATE = {
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case FETCH_DATA:
-      const pages = { ..._.mapKeys(action.payload.pages, "id") };
-      const header = action.payload.header;
-      const footer = action.payload.footer;
-      const menu = action.payload.menu;
-
-      return { ...state, pages, header, footer, menu };
+      return { ...state, ...action.payload };
     default:
       return state;
   }

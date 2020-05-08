@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import slugify from "slugify";
 
 import "./app.css";
-import { fetchData } from "../actions/app";
-import { selectPage } from "../actions/selected";
+import { fetchData } from "../actions/data";
+import { selectPage } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
 import { showMenu, hideMenu } from "../actions/menu";
 import Header from "./header";
@@ -22,8 +22,8 @@ class App extends Component {
 
   render() {
     const {
-      app,
-      selected,
+      data,
+      selectedPage,
       flash,
       selectPage,
       showFlash,
@@ -33,7 +33,7 @@ class App extends Component {
       menu,
     } = this.props;
 
-    const { header, pages, footer, menu: menuItems } = app;
+    const { header, pages, footer, menu: menuItems } = data;
 
     const render = ({ match }) => {
       const { page: slug } = match.params;
@@ -63,7 +63,7 @@ class App extends Component {
 
           <Nav
             pages={pages}
-            selected={selected}
+            selectedPage={selectedPage}
             selectPage={selectPage}
             showFlash={showFlash}
             hideFlash={hideFlash}
@@ -72,7 +72,7 @@ class App extends Component {
 
           <Header header={header} />
 
-          <Page pages={pages} selected={selected} flash={flash} />
+          <Page pages={pages} selectedPage={selectedPage} flash={flash} />
 
           <Footer footer={footer} />
 
@@ -84,8 +84,8 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  app: state.app,
-  selected: state.selected,
+  data: state.data,
+  selectedPage: state.page.selected,
   flash: state.flash,
   menu: state.menu,
 });
