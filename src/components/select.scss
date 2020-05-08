@@ -1,13 +1,24 @@
 .select {
+  position: relative;
   margin: var(--padding-md) 0;
   display: flex;
-  height: var(--icon-md);
-  background-position: center right var(--padding-lg);
-  background-size: 2rem;
-  background-repeat: no-repeat;
+
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: var(--icon-md);
+    height: var(--icon-md);
+    mask-position: center;
+    mask-size: 50%;
+    mask-repeat: no-repeat;
+    background-color: var(--color-dark);
+  }
 
   select {
     font-size: 1.2rem;
+    font-weight: bold;
+    height: var(--icon-md);
     line-height: var(--icon-md);
     width: 100%;
     padding: 0 var(--padding-lg);

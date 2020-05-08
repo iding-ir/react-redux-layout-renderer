@@ -31,11 +31,13 @@ class Select extends Component {
     };
 
     const style = {
-      backgroundImage: `url(${image})`,
+      WebkitMaskImage: `url(${image})`,
     };
 
     return (
-      <div className="select" style={style}>
+      <div className="select">
+        <div className="image" style={style}></div>
+
         <select
           ref={this.select}
           onChange={() => {
