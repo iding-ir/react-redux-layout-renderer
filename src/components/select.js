@@ -1,49 +1,44 @@
-import React, { Component } from "react";
+import React, { useRef } from "react";
 
 import "./select.scss";
 
-class Select extends Component {
-  constructor(props) {
-    super(props);
+const Select = (props) => {
+  const { items, image, value, onChange } = props;
 
-    this.select = React.createRef();
-  }
+  const selectElement = useRef(null);
 
-  render() {
-    const { items, image, value, onChange } = this.props;
+  const renderOption = () => {
+    return items.map((item, index) => {
+      const { value, title } = item;
 
-    const renderOption = () => {
-      return items.map((item, index) => {
-        const { value, title } = item;
+      return (
+        <option key={index} value={value}>
+          {title}
+        </option>
+      );
+    });
+  };
 
-        return (
-          <option key={index} value={value}>
-            {title}
-          </option>
-        );
-      });
-    };
+  const style = {
+    WebkitMaskImage: `url(${image})`,
+    MaskImage: `url(${image})`,
+  };
 
-    const style = {
-      WebkitMaskImage: `url(${image})`,
-    };
+  return (
+    <div className="select">
+      <div className="image" style={style}></div>
 
-    return (
-      <div className="select">
-        <div className="image" style={style}></div>
-
-        <select
-          value={value}
-          ref={this.select}
-          onChange={() => {
-            onChange(this.select.current.value);
-          }}
-        >
-          {renderOption()}
-        </select>
-      </div>
-    );
-  }
-}
+      <select
+        value={value}
+        ref={selectElement}
+        onChange={() => {
+          onChange(selectElement.current.value);
+        }}
+      >
+        {renderOption()}
+      </select>
+    </div>
+  );
+};
 
 export default Select;

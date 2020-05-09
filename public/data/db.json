@@ -6,7 +6,7 @@
       "description": "[EN] Lorem ipsum dolor sit amet"
     },
     "footer": "[EN] Nam ornare tortor enim",
-    "menu": [
+    "menuItems": [
       {
         "title": "[EN] Curabitur",
         "url": "#"
@@ -17,7 +17,7 @@
       },
       {
         "title": "[EN] Dolore",
-        "url": "#"
+        "url": ""
       },
       {
         "title": "[EN] Fusce",
@@ -76,7 +76,7 @@
       "description": "[DE] Lorem ipsum dolor sit amet"
     },
     "footer": "[DE] Nam ornare tortor enim",
-    "menu": [
+    "menuItems": [
       {
         "title": "[DE] Curabitur",
         "url": "#"
@@ -87,7 +87,7 @@
       },
       {
         "title": "[DE] Dolore",
-        "url": "#"
+        "url": ""
       },
       {
         "title": "[DE] Fusce",

@@ -9,7 +9,7 @@ const INITIAL_STATE = [
     },
     footer: "",
     pages: [],
-    menu: [],
+    menuItems: [],
   },
 ];
 

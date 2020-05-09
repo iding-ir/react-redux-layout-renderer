@@ -1,40 +1,39 @@
-import React, { Component } from "react";
+import React from "react";
 import * as classnames from "classnames";
 
 import "./item.scss";
 
-class Item extends Component {
-  render() {
-    const { page, selectedPage, selectPage, showFlash, hideFlash } = this.props;
-    const { id, title, icon } = page;
+const Item = (props) => {
+  const { page, selectedPage, selectPage, showFlash, hideFlash } = props;
 
-    const classes = classnames("item", {
-      "is-selected": id === selectedPage,
-    });
+  const { id, title, icon } = page;
 
-    const style = {
-      WebkitMaskImage: `url(${icon})`,
-      maskImage: `url(${icon})`,
-    };
+  const classes = classnames("item", {
+    "is-selected": id === selectedPage,
+  });
 
-    const onClick = (id) => {
-      selectPage(id);
+  const style = {
+    WebkitMaskImage: `url(${icon})`,
+    maskImage: `url(${icon})`,
+  };
 
-      showFlash();
+  const onClick = (id) => {
+    selectPage(id);
 
-      setTimeout(() => {
-        hideFlash();
-      }, 1000);
-    };
+    showFlash();
 
-    return (
-      <div className={classes} onClick={() => onClick(id)}>
-        <div className="icon" style={style}></div>
+    setTimeout(() => {
+      hideFlash();
+    }, 1000);
+  };
 
-        <div className="title">{title}</div>
-      </div>
-    );
-  }
-}
+  return (
+    <div className={classes} onClick={() => onClick(id)}>
+      <div className="icon" style={style}></div>
+
+      <div className="title">{title}</div>
+    </div>
+  );
+};
 
 export default Item;

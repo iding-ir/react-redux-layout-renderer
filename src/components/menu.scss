@@ -6,7 +6,7 @@
   height: 100%;
   visibility: hidden;
   opacity: 0;
-  background-color: var(--color-light);
+  background-color: var(--color-lighter);
   transition: var(--transition-sm);
 
   &.is-visible {

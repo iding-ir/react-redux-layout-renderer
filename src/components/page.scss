@@ -11,22 +11,23 @@
   @media only screen and (min-width: 840px) {
     grid-column: page-start/page-end;
     grid-row: nav-start/page-end;
-    padding: 0 var(--icon-lg);
+    padding: 0 var(--padding-lg);
   }
 
   .title {
     font-size: 3rem;
     line-height: var(--icon-lg);
     color: var(--color-primary-light);
+    padding: 0 var(--padding-md);
   }
 
   .content {
+    flex-grow: 10;
+    overflow: auto;
     font-size: 1.4rem;
     line-height: 1.5;
     color: var(--color-dark);
-    padding: var(--padding-md) 0;
-    flex-grow: 10;
-    overflow: auto;
+    padding: var(--padding-md);
     border-top: 3px solid var(--color-dark);
     border-bottom: 1px solid var(--color-light);
   }

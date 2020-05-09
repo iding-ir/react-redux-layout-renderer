@@ -1,9 +1,4 @@
-import {
-  SHOW_MENU,
-  HIDE_MENU,
-  CHANGE_THEME,
-  CHANGE_LANGUAGE,
-} from "../constants";
+import { SHOW_MENU, HIDE_MENU, SET_THEME, SET_LANGUAGE } from "../constants";
 
 export const showMenu = () => {
   return {
@@ -17,20 +12,20 @@ export const hideMenu = () => {
   };
 };
 
-export const changeTheme = (theme) => {
+export const setTheme = (theme) => {
   localStorage.setItem("theme", theme);
 
   return {
-    type: CHANGE_THEME,
+    type: SET_THEME,
     payload: theme,
   };
 };
 
-export const changeLanguage = (language) => {
+export const setLanguage = (language) => {
   localStorage.setItem("language", language);
 
   return {
-    type: CHANGE_LANGUAGE,
+    type: SET_LANGUAGE,
     payload: language,
   };
 };

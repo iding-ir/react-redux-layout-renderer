@@ -1,19 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 import "./header.scss";
 
-class Header extends Component {
-  render() {
-    const { title, description } = this.props.header;
+const Header = (props) => {
+  const { title, description } = props.header;
 
-    return (
-      <div className="header">
-        <div className="title">{title}</div>
+  return (
+    <div className="header">
+      <div className="title">{title}</div>
 
-        <div className="description">{description}</div>
-      </div>
-    );
-  }
-}
+      <div className="description">{description}</div>
+    </div>
+  );
+};
 
 export default Header;

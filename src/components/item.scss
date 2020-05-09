@@ -31,7 +31,7 @@
   }
 
   &:hover {
-    background-color: var(--fade-light-md);
+    background-color: var(--fade-light-sm);
 
     .icon {
       animation: shake 0.5s;
@@ -42,7 +42,9 @@
   .title {
     display: none;
     color: var(--color-dark);
-    font-size: 1rem;
+    padding: 0 var(--padding-sm);
+    text-align: center;
+    line-height: 1.5;
 
     @media only screen and (min-width: 840px) {
       display: block;

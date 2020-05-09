@@ -1,22 +1,29 @@
-import React, { Component } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import slugify from "slugify";
 import * as classnames from "classnames";
 
 import "./nav.scss";
 import Item from "./item";
+import { slugifySettings } from "../utils/settings";
 
-class Nav extends Component {
-  renderItems = (pages) => {
-    const { selectedPage, selectPage, showFlash, hideFlash } = this.props;
+const Nav = (props) => {
+  const {
+    pages,
+    selectedPage,
+    more,
+    selectPage,
+    showFlash,
+    hideFlash,
+    showMenu,
+    toggleMore,
+  } = props;
 
+  const renderItems = (pages) => {
     return Object.values(pages).map((page) => {
       const { id, title } = page;
 
-      const slug = slugify(title, {
-        lower: true,
-        strict: true,
-      });
+      const slug = slugify(title, slugifySettings);
 
       return (
         <Link key={id} to={`/p/${slug}`}>
@@ -32,42 +39,38 @@ class Nav extends Component {
     });
   };
 
-  render() {
-    const { pages, showMenu, more, toggleMore } = this.props;
+  const visiblePages = pages.slice(0, 4);
+  const hiddenPages = pages.slice(4, pages.length);
 
-    const visiblePages = pages.slice(0, 4);
-    const hiddenPages = pages.slice(4, pages.length);
+  const visiblePagesRendered = renderItems(visiblePages);
+  const hiddenPagesRendered = renderItems(hiddenPages);
 
-    const visiblePagesRendered = this.renderItems(visiblePages);
-    const hiddenPagesRendered = this.renderItems(hiddenPages);
+  const moreClasses = classnames("nav-more", {
+    "is-visible": hiddenPages.length,
+  });
 
-    const moreClasses = classnames("nav-more", {
-      "is-visible": hiddenPages.length,
-    });
+  const hiddenClasses = classnames("nav-hidden", {
+    "is-visible": more,
+  });
 
-    const hiddenClasses = classnames("nav-hidden", {
-      "is-visible": more,
-    });
+  return (
+    <div className="nav">
+      <div className="menu-open" onClick={showMenu}></div>
 
-    return (
-      <div className="nav">
-        <div className="menu-open" onClick={showMenu}></div>
+      {visiblePagesRendered}
 
-        {visiblePagesRendered}
+      <div
+        className={moreClasses}
+        onClick={(event) => {
+          event.stopPropagation();
 
-        <div
-          className={moreClasses}
-          onClick={(event) => {
-            event.stopPropagation();
-
-            toggleMore();
-          }}
-        >
-          <div className={hiddenClasses}>{hiddenPagesRendered}</div>
-        </div>
+          toggleMore();
+        }}
+      >
+        <div className={hiddenClasses}>{hiddenPagesRendered}</div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Nav;

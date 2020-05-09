@@ -8,17 +8,13 @@ import "./app.scss";
 import { fetchData } from "../actions/data";
 import { selectPage, hideMore, toggleMore } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
-import {
-  showMenu,
-  hideMenu,
-  changeTheme,
-  changeLanguage,
-} from "../actions/menu";
+import { showMenu, hideMenu, setTheme, setLanguage } from "../actions/menu";
 import Header from "./header";
 import Nav from "./nav";
 import Page from "./page";
 import Footer from "./footer";
 import Menu from "./menu";
+import { slugifySettings } from "../utils/settings";
 
 class App extends Component {
   componentDidMount() {
@@ -28,17 +24,18 @@ class App extends Component {
   }
 
   fetchStorage = () => {
-    const { changeTheme, changeLanguage } = this.props;
+    const { setTheme, setLanguage } = this.props;
 
     const theme = localStorage.getItem("theme");
-    changeTheme(theme);
+    setTheme(theme);
 
     const language = localStorage.getItem("language");
-    changeLanguage(language);
+    setLanguage(language);
   };
 
   render() {
     const {
+      menu,
       data,
       selectedPage,
       more,
@@ -50,40 +47,34 @@ class App extends Component {
       hideFlash,
       showMenu,
       hideMenu,
-      changeTheme,
-      changeLanguage,
-      menu,
+      setTheme,
+      setLanguage,
     } = this.props;
 
-    const current = data[menu.language] || data[Object.keys(data)[0]];
+    const { visible, theme, language } = menu;
 
-    const { header, pages, footer, menu: menuItems } = current;
+    const currentData = data[language] || data[Object.keys(data)[0]];
 
-    const render = ({ match }) => {
-      const { page: slug } = match.params;
+    const { header, pages, footer, menuItems } = currentData;
 
-      const page = Object.values(pages).filter((item) => {
-        const itemSlug = slugify(item.title, {
-          lower: true,
-          strict: true,
-        });
+    const routeRenderer = ({ match }) => {
+      const { slug } = match.params;
 
-        return itemSlug === slug;
-      })[0];
+      const page = Object.values(pages).filter(
+        (item) => slugify(item.title, slugifySettings) === slug
+      )[0];
 
-      if (page === undefined) {
-        return;
+      if (page !== undefined) {
+        setTimeout(() => {
+          selectPage(page.id);
+        }, 0);
       }
-
-      setTimeout(() => {
-        selectPage(page.id);
-      }, 0);
     };
 
     return (
       <Router>
         <div className="app" theme={menu.theme} onClick={hideMore}>
-          <Route path="/p/:page" render={render} />
+          <Route path="/p/:slug" render={routeRenderer} />
 
           <Nav
             pages={pages}
@@ -104,13 +95,13 @@ class App extends Component {
 
           <Menu
             data={data}
-            display={menu.visible}
-            hideMenu={hideMenu}
             items={menuItems}
-            theme={menu.theme}
-            language={menu.language}
-            changeTheme={changeTheme}
-            changeLanguage={changeLanguage}
+            theme={theme}
+            language={language}
+            visible={visible}
+            hideMenu={hideMenu}
+            setTheme={setTheme}
+            setLanguage={setLanguage}
           />
         </div>
       </Router>
@@ -137,8 +128,8 @@ const mapDispatchToProps = (dispatch) =>
       hideFlash,
       showMenu,
       hideMenu,
-      changeTheme,
-      changeLanguage,
+      setTheme,
+      setLanguage,
     },
     dispatch
   );

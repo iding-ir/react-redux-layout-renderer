@@ -12,21 +12,18 @@
   @media only screen and (min-width: 840px) {
     grid-column: page-start/page-end;
     grid-row: nav-start/page-end;
-    padding: var(--padding-md) var(--icon-lg);
-  }
-
-  .title,
-  .description {
-    line-height: 1.5;
+    padding: var(--padding-lg);
   }
 
   .title {
     font-size: 3.2rem;
+    line-height: 1.5;
     color: var(--color-primary-light);
   }
 
   .description {
     font-size: 1.6rem;
+    line-height: 1.5;
     color: var(--color-secondary-light);
   }
 }
