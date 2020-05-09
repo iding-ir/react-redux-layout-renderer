@@ -6,7 +6,7 @@
 
 ## Intro
 
-Layout Renderer recieves a standard JSON file and renders a themeable multilingual responsive web application.
+Layout Renderer receives a standard JSON file and renders a themeable multilingual responsive web application.
 
 It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skills.
 
