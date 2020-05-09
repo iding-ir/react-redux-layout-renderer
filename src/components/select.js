@@ -29,7 +29,7 @@ const Select = (props) => {
       <div className="image" style={style}></div>
 
       <select
-        value={value}
+        value={value || ""}
         ref={selectElement}
         onChange={() => {
           onChange(selectElement.current.value);
