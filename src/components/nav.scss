@@ -46,7 +46,7 @@
   }
 
   .menu-open {
-    background-color: var(--color-secondary-light);
+    background-color: var(--color-secondary-dark);
 
     &::before {
       mask-image: url("../assets/images/icon-menu.svg");
@@ -57,7 +57,7 @@
   .nav-more {
     &::before {
       mask-image: url("../assets/images/icon-more.svg");
-      background-color: var(--color-secondary-light);
+      background-color: var(--color-secondary-dark);
     }
 
     &:hover {

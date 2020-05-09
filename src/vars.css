@@ -1,13 +1,13 @@
 :root {
-  --color-primary-light: #00a8ff;
-  --color-primary-dark: #0097e6;
-  --color-secondary-light: #e84118;
-  --color-secondary-dark: #c23616;
+  --color-primary-light: #1e88e5;
+  --color-primary-dark: #1565c0;
+  --color-secondary-light: #1e88e5;
+  --color-secondary-dark: #1565c0;
 
   --color-lighter: #fafafa;
   --color-light: #eeeeee;
-  --color-dark: #353b48;
-  --color-darker: #2f3640;
+  --color-dark: #323232;
+  --color-darker: #212121;
 
   --color-grey-sm: #eceff1;
   --color-grey-md: #cfd8dc;
@@ -56,13 +56,13 @@
 }
 
 :root [theme="dark"] {
-  --color-primary-light: #0097e6;
-  --color-primary-dark: #00a8ff;
-  --color-secondary-light: #c23616;
-  --color-secondary-dark: #e84118;
+  --color-primary-light: #ef6c00;
+  --color-primary-dark: #fb8c00;
+  --color-secondary-light: #ef6c00;
+  --color-secondary-dark: #fb8c00;
 
-  --color-lighter: #2f3640;
-  --color-light: #353b48;
+  --color-lighter: #212121;
+  --color-light: #323232;
   --color-dark: #eeeeee;
   --color-darker: #fafafa;
 

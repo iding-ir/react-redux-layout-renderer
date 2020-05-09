@@ -20,7 +20,7 @@
     left: 0;
     width: var(--icon-md);
     height: var(--icon-md);
-    background-color: var(--color-secondary-light);
+    background-color: var(--color-secondary-dark);
     cursor: pointer;
 
     @media only screen and (min-width: 840px) {
@@ -71,7 +71,7 @@
         }
 
         a {
-          color: var(--color-primary-light);
+          color: var(--color-primary-dark);
           transition: var(--transition-sm);
 
           &:hover {

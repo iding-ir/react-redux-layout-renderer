@@ -14,10 +14,10 @@
   }
 
   &.is-selected {
-    box-shadow: 0 -4px 0 0 var(--color-secondary-light) inset;
+    box-shadow: 0 -4px 0 0 var(--color-secondary-dark) inset;
 
     @media only screen and (min-width: 840px) {
-      box-shadow: -4px 0 0 0 var(--color-secondary-light) inset;
+      box-shadow: -4px 0 0 0 var(--color-secondary-dark) inset;
     }
   }
 
@@ -35,7 +35,7 @@
 
     .icon {
       animation: shake 0.5s;
-      background-color: var(--color-secondary-light);
+      background-color: var(--color-secondary-dark);
     }
   }
 
@@ -73,10 +73,10 @@
 .nav-hidden {
   .item {
     &.is-selected {
-      box-shadow: -4px 0 0 0 var(--color-secondary-light) inset;
+      box-shadow: -4px 0 0 0 var(--color-secondary-dark) inset;
 
       @media only screen and (min-width: 840px) {
-        box-shadow: 0 -4px 0 0 var(--color-secondary-light) inset;
+        box-shadow: 0 -4px 0 0 var(--color-secondary-dark) inset;
       }
     }
   }
