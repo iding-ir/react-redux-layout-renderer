@@ -14,4 +14,11 @@ const Header = (props) => {
   );
 };
 
+Header.defaultProps = {
+  header: {
+    title: "",
+    description: "",
+  },
+};
+
 export default Header;
