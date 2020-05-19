@@ -2,7 +2,7 @@
 
 - [Intro](#intro)
 - [Demo](#demo)
-- [Data struction](#data-structure)
+- [Data structure](#data-structure)
 
 ## Intro
 
@@ -14,7 +14,7 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
 
 [Live demo](http://react-redux-layout-renderer.iding.ir)
 
-## Data struction
+## Data structure
 
 ```
 {
