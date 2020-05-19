@@ -2,7 +2,7 @@
 
 - [Intro](#intro)
 - [Demo](#demo)
-- [Input](#input)
+- [Data struction](#data-structure)
 
 ## Intro
 
@@ -14,7 +14,7 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
 
 [Live demo](http://react-redux-layout-renderer.iding.ir)
 
-## Input
+## Data struction
 
 ```
 {
@@ -44,13 +44,13 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
         "id": 1,
         "icon": "[BASE64_IMAGE]",
         "title": "[EN] Augue",
-        "content": "[EN] Aliquet porttitor lacus luctus accumsan tortor posuere."
+        "content": "### [EN] Aliquet \nPorttitor lacus luctus [accumsan](#) tortor posuere."
       },
       {
         "id": 2,
         "icon": "[BASE64_IMAGE]",
         "title": "[EN] Non sodales",
-        "content": "[EN] Viverra adipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
+        "content": "### [EN] Viverra \nAdipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
       }
     ]
   },
@@ -80,13 +80,13 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
         "id": 1,
         "icon": "[BASE64_IMAGE]",
         "title": "[DE] Augue",
-        "content": "[DE] Aliquet porttitor lacus luctus accumsan tortor posuere."
+        "content": "### [DE] Aliquet \nPorttitor lacus luctus [accumsan](#) tortor posuere."
       },
       {
         "id": 2,
         "icon": "[BASE64_IMAGE]",
         "title": "[DE] Non sodales",
-        "content": "[DE] Viverra adipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
+        "content": "### [DE] Viverra \nAdipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
       }
     ]
   }
