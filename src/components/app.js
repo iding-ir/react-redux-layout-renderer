@@ -9,7 +9,7 @@ import { fetchData } from "../actions/data";
 import { selectPage, hideMore, toggleMore } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
 import { showMenu, hideMenu, setTheme, setLanguage } from "../actions/menu";
-import Header from "./header";
+import Home from "./home";
 import Nav from "./nav";
 import Page from "./page";
 import Footer from "./footer";
@@ -87,7 +87,7 @@ class App extends Component {
             toggleMore={toggleMore}
           />
 
-          <Header header={header} />
+          <Home header={header} />
 
           <Page pages={pages} selectedPage={selectedPage} flash={flash} />
 

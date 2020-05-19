@@ -1,12 +1,12 @@
 import React from "react";
 
-import "./header.scss";
+import "./home.scss";
 
-const Header = (props) => {
+const Home = (props) => {
   const { title, description } = props.header;
 
   return (
-    <div className="header">
+    <div className="home">
       <div className="title">{title}</div>
 
       <div className="description">{description}</div>
@@ -14,11 +14,11 @@ const Header = (props) => {
   );
 };
 
-Header.defaultProps = {
+Home.defaultProps = {
   header: {
     title: "",
     description: "",
   },
 };
 
-export default Header;
+export default Home;
