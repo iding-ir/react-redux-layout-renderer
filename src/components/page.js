@@ -1,5 +1,6 @@
 import React from "react";
 import * as classnames from "classnames";
+import showdown from "showdown";
 
 import "./page.scss";
 
@@ -18,11 +19,16 @@ const Page = (props) => {
     "is-flashing": flash,
   });
 
+  const converter = new showdown.Converter();
+
   return (
     <div className={classes}>
       <div className="title">{title}</div>
 
-      <div className="content">{content}</div>
+      <div
+        className="content"
+        dangerouslySetInnerHTML={{ __html: converter.makeHtml(content) }}
+      ></div>
 
       <div className="flash"></div>
     </div>
