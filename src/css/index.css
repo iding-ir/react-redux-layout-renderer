@@ -23,3 +23,15 @@ html {
     font-size: 14px;
   }
 }
+
+a,
+a:link,
+a:visited {
+  color: var(--color-secondary-light);
+  transition: color var(--transition-sm);
+}
+
+a:hover,
+a:active {
+  color: var(--color-secondary-dark);
+}
