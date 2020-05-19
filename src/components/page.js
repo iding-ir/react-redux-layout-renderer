@@ -5,15 +5,9 @@ import showdown from "showdown";
 import "./page.scss";
 
 const Page = (props) => {
-  const { pages, selectedPage, flash } = props;
+  const { page, flash } = props;
 
-  if (selectedPage === null) {
-    return null;
-  }
-
-  const { title, content } = pages.filter(
-    (page) => page.id === selectedPage
-  )[0];
+  const { title, content } = page;
 
   const classes = classnames("page", {
     "is-flashing": flash,

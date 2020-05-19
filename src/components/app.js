@@ -1,7 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import slugify from "slugify";
 
 import "./app.scss";
@@ -62,14 +67,22 @@ class App extends Component {
       const { slug } = match.params;
 
       const page = Object.values(pages).filter(
-        (item) => slugify(item.title, slugifySettings) === slug
+        (page) => slugify(page.title, slugifySettings) === slug
       )[0];
 
-      if (page !== undefined) {
-        setTimeout(() => {
-          selectPage(page.id);
-        }, 0);
+      if (pages.length === 0) {
+        return "";
       }
+
+      if (page === undefined) {
+        return <Redirect to="/404" />;
+      }
+
+      setTimeout(() => {
+        selectPage(page.id);
+      }, 0);
+
+      return <Page page={page} flash={flash} />;
     };
 
     return (
@@ -93,8 +106,6 @@ class App extends Component {
             showMenu={showMenu}
             toggleMore={toggleMore}
           />
-
-          <Page pages={pages} selectedPage={selectedPage} flash={flash} />
 
           <Footer footer={footer} />
 
