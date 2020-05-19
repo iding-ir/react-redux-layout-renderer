@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import slugify from "slugify";
 
 import "./app.scss";
@@ -10,6 +10,7 @@ import { selectPage, hideMore, toggleMore } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
 import { showMenu, hideMenu, setTheme, setLanguage } from "../actions/menu";
 import Home from "./home";
+import NotFound from "./notFound";
 import Nav from "./nav";
 import Page from "./page";
 import Footer from "./footer";
@@ -74,7 +75,13 @@ class App extends Component {
     return (
       <Router>
         <div className="app" theme={menu.theme} onClick={hideMore}>
-          <Route path="/p/:slug" render={routeRenderer} />
+          <Switch>
+            <Route exact path="/" render={() => <Home header={header} />} />
+
+            <Route exact path="/p/:slug" render={routeRenderer} />
+
+            <Route path="*" component={NotFound} />
+          </Switch>
 
           <Nav
             pages={pages}
@@ -86,8 +93,6 @@ class App extends Component {
             showMenu={showMenu}
             toggleMore={toggleMore}
           />
-
-          <Home header={header} />
 
           <Page pages={pages} selectedPage={selectedPage} flash={flash} />
 
