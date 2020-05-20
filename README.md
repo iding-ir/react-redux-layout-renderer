@@ -16,6 +16,10 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
 
 ## Data structure
 
+Input data is in the form of JSON.
+
+It supports html tags and markdown for page content.
+
 ```
 {
   "en": {
