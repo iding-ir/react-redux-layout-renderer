@@ -24,11 +24,15 @@ It supports html tags and markdown for page content.
 {
   "en": {
     "language": "English",
-    "header": {
+    "splash": {
       "title": "[EN] Lorem Ipsum",
       "description": "[EN] Lorem ipsum dolor sit amet"
     },
     "footer": "[EN] Nam ornare tortor enim",
+    "notFound": {
+      "title": "[EN] 404",
+      "description": "[EN] Lorem ipsum dolor sit amet"
+    },
     "menuItems": [
       {
         "title": "[EN] Curabitur",
@@ -62,11 +66,15 @@ It supports html tags and markdown for page content.
   },
   "de": {
     "language": "Deutsch",
-    "header": {
+    "splash": {
       "title": "[DE] Lorem Ipsum",
       "description": "[DE] Lorem ipsum dolor sit amet"
     },
     "footer": "[DE] Nam ornare tortor enim",
+    "notFound": {
+      "title": "[DE] 404",
+      "description": "[DE] Lorem ipsum dolor sit amet"
+    },
     "menuItems": [
       {
         "title": "[DE] Curabitur",
