@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import slugify from "slugify";
 import * as classnames from "classnames";
 
 import "./nav.scss";
 import Item from "./item";
-import { slugifySettings } from "../utils/settings";
 
 const Nav = (props) => {
   const {
@@ -21,9 +19,7 @@ const Nav = (props) => {
 
   const renderItems = (pages) => {
     return Object.values(pages).map((page) => {
-      const { id, title } = page;
-
-      const slug = slugify(title, slugifySettings);
+      const { id, slug } = page;
 
       return (
         <Link key={id} to={`/p/${slug}`}>

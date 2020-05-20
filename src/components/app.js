@@ -7,7 +7,6 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import slugify from "slugify";
 
 import "./app.scss";
 import { fetchData } from "../actions/data";
@@ -20,7 +19,6 @@ import Nav from "./nav";
 import Page from "./page";
 import Footer from "./footer";
 import Menu from "./menu";
-import { slugifySettings } from "../utils/settings";
 
 class App extends Component {
   componentDidMount() {
@@ -66,9 +64,7 @@ class App extends Component {
     const routeRenderer = ({ match }) => {
       const { slug } = match.params;
 
-      const page = Object.values(pages).filter(
-        (page) => slugify(page.title, slugifySettings) === slug
-      )[0];
+      const page = Object.values(pages).filter((page) => page.slug === slug)[0];
 
       if (pages.length === 0) {
         return "";
