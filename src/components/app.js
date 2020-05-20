@@ -13,7 +13,7 @@ import { fetchData } from "../actions/data";
 import { selectPage, hideMore, toggleMore } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
 import { showMenu, hideMenu, setTheme, setLanguage } from "../actions/menu";
-import Home from "./home";
+import Splash from "./splash";
 import NotFound from "./notFound";
 import Nav from "./nav";
 import Page from "./page";
@@ -61,7 +61,7 @@ class App extends Component {
 
     const { splash, pages, footer, notFound, menuItems } = currentData;
 
-    const homeRouteRenderer = ({ match }) => {
+    const splashRouteRenderer = ({ match }) => {
       const { language } = match.params;
 
       if (language !== undefined) {
@@ -70,7 +70,7 @@ class App extends Component {
         }, 0);
       }
 
-      return <Home header={splash} />;
+      return <Splash header={splash} />;
     };
 
     const pageRouteRenderer = ({ match }) => {
@@ -97,7 +97,7 @@ class App extends Component {
       <Router>
         <div className="app" theme={menu.theme} onClick={hideMore}>
           <Switch>
-            <Route exact path="/:language?" render={homeRouteRenderer} />
+            <Route exact path="/l/:language" render={splashRouteRenderer} />
 
             <Route exact path="/p/:slug" render={pageRouteRenderer} />
 
