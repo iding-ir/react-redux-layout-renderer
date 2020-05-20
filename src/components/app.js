@@ -64,11 +64,9 @@ class App extends Component {
     const splashRouteRenderer = ({ match }) => {
       const { language } = match.params;
 
-      if (language !== undefined) {
-        setTimeout(() => {
-          setLanguage(language);
-        }, 0);
-      }
+      setTimeout(() => {
+        setLanguage(language);
+      }, 0);
 
       return <Splash header={splash} />;
     };
@@ -97,6 +95,8 @@ class App extends Component {
       <Router>
         <div className="app" theme={menu.theme} onClick={hideMore}>
           <Switch>
+            <Route exact path="/" render={() => <Splash header={splash} />} />
+
             <Route exact path="/l/:language" render={splashRouteRenderer} />
 
             <Route exact path="/p/:slug" render={pageRouteRenderer} />
