@@ -16,8 +16,9 @@ const Home = (props) => {
 
 Home.defaultProps = {
   header: {
-    title: "",
-    description: "",
+    title: "Layout Renderer",
+    description:
+      "A themeable, multilingual and responsive layout created by React and Redux.",
   },
 };
 
