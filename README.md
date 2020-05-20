@@ -42,12 +42,14 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
     "pages": [
       {
         "id": 1,
+        "slug": "augue",
         "icon": "[BASE64_IMAGE]",
         "title": "[EN] Augue",
         "content": "### [EN] Aliquet \nPorttitor lacus luctus [accumsan](#) tortor posuere."
       },
       {
         "id": 2,
+        "slug": "non-sodales",
         "icon": "[BASE64_IMAGE]",
         "title": "[EN] Non sodales",
         "content": "### [EN] Viverra \nAdipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
@@ -78,12 +80,14 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
     "pages": [
       {
         "id": 1,
+        "slug": "augue",
         "icon": "[BASE64_IMAGE]",
         "title": "[DE] Augue",
         "content": "### [DE] Aliquet \nPorttitor lacus luctus [accumsan](#) tortor posuere."
       },
       {
         "id": 2,
+        "slug": "non-sodales",
         "icon": "[BASE64_IMAGE]",
         "title": "[DE] Non sodales",
         "content": "### [DE] Viverra \nAdipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
