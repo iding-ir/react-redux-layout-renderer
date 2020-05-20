@@ -59,7 +59,7 @@ class App extends Component {
 
     const currentData = data[language] || data[Object.keys(data)[0]];
 
-    const { header, pages, footer, menuItems } = currentData;
+    const { splash, pages, footer, notFound, menuItems } = currentData;
 
     const homeRouteRenderer = ({ match }) => {
       const { language } = match.params;
@@ -70,7 +70,7 @@ class App extends Component {
         }, 0);
       }
 
-      return <Home header={header} />;
+      return <Home header={splash} />;
     };
 
     const pageRouteRenderer = ({ match }) => {
@@ -101,7 +101,7 @@ class App extends Component {
 
             <Route exact path="/p/:slug" render={pageRouteRenderer} />
 
-            <Route path="*" component={NotFound} />
+            <Route path="*" render={() => <NotFound header={notFound} />} />
           </Switch>
 
           <Nav
