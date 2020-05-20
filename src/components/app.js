@@ -61,7 +61,17 @@ class App extends Component {
 
     const { header, pages, footer, menuItems } = currentData;
 
-    const routeRenderer = ({ match }) => {
+    const homeRouteRenderer = ({ match }) => {
+      const { language } = match.params;
+
+      setTimeout(() => {
+        setLanguage(language);
+      }, 0);
+
+      return <Home header={header} />;
+    };
+
+    const pageRouteRenderer = ({ match }) => {
       const { slug } = match.params;
 
       const page = Object.values(pages).filter((page) => page.slug === slug)[0];
@@ -85,9 +95,11 @@ class App extends Component {
       <Router>
         <div className="app" theme={menu.theme} onClick={hideMore}>
           <Switch>
-            <Route exact path="/" render={() => <Home header={header} />} />
+            <Route exact path="/" render={homeRouteRenderer} />
 
-            <Route exact path="/p/:slug" render={routeRenderer} />
+            <Route exact path="/:language" render={homeRouteRenderer} />
+
+            <Route exact path="/p/:slug" render={pageRouteRenderer} />
 
             <Route path="*" component={NotFound} />
           </Switch>
