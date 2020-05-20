@@ -64,9 +64,11 @@ class App extends Component {
     const homeRouteRenderer = ({ match }) => {
       const { language } = match.params;
 
-      setTimeout(() => {
-        setLanguage(language);
-      }, 0);
+      if (language !== undefined) {
+        setTimeout(() => {
+          setLanguage(language);
+        }, 0);
+      }
 
       return <Home header={header} />;
     };
@@ -95,9 +97,7 @@ class App extends Component {
       <Router>
         <div className="app" theme={menu.theme} onClick={hideMore}>
           <Switch>
-            <Route exact path="/" render={homeRouteRenderer} />
-
-            <Route exact path="/:language" render={homeRouteRenderer} />
+            <Route exact path="/:language?" render={homeRouteRenderer} />
 
             <Route exact path="/p/:slug" render={pageRouteRenderer} />
 
