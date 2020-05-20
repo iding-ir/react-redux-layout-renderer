@@ -35,8 +35,11 @@ const Nav = (props) => {
     });
   };
 
-  const visiblePages = pages.slice(0, 4);
-  const hiddenPages = pages.slice(4, pages.length);
+  const visiblePages = pages.slice(0, process.env.REACT_APP_VISIBLE_NAV_ITEMS);
+  const hiddenPages = pages.slice(
+    process.env.REACT_APP_VISIBLE_NAV_ITEMS,
+    pages.length
+  );
 
   const visiblePagesRendered = renderItems(visiblePages);
   const hiddenPagesRendered = renderItems(hiddenPages);
