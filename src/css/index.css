@@ -69,13 +69,3 @@ h5 {
 h6 {
   font-size: 1.2rem;
 }
-
-ul {
-  margin: var(--padding-md) 0;
-}
-
-li {
-  list-style: disc;
-  list-style-position: inside;
-  padding: var(--padding-sm) 0;
-}

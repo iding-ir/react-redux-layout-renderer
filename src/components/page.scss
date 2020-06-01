@@ -29,6 +29,16 @@
     padding: var(--padding-md);
     border-top: 3px solid var(--color-dark);
     border-bottom: 1px solid var(--color-light);
+
+    ul {
+      margin: var(--padding-md) 0;
+    }
+
+    li {
+      list-style: disc;
+      list-style-position: inside;
+      padding: var(--padding-sm) 0;
+    }
   }
 
   .flash {
