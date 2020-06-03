@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./splash.scss";
+import "./Splash.scss";
 
 const Splash = (props) => {
   const { title, description } = props.header;

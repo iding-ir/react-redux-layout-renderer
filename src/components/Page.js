@@ -2,7 +2,7 @@ import React from "react";
 import * as classnames from "classnames";
 import showdown from "showdown";
 
-import "./page.scss";
+import "./Page.scss";
 
 const Page = (props) => {
   const { page, flash } = props;

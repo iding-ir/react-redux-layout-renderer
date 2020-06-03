@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./notFound.scss";
+import "./NotFound.scss";
 
 const NotFound = (props) => {
   const { title, description } = props.header;

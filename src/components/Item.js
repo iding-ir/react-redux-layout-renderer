@@ -1,7 +1,7 @@
 import React from "react";
 import * as classnames from "classnames";
 
-import "./item.scss";
+import "./Item.scss";
 
 const Item = (props) => {
   const { page, selectedPage, selectPage, showFlash, hideFlash } = props;

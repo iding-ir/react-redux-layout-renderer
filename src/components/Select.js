@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-import "./select.scss";
+import "./Select.scss";
 
 const Select = (props) => {
   const { items, image, value, onChange } = props;

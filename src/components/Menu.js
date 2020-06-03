@@ -1,8 +1,8 @@
 import React from "react";
 import * as classnames from "classnames";
 
-import "./menu.scss";
-import Select from "./select";
+import "./Menu.scss";
+import Select from "./Select";
 import { themeImage, languageImage } from "../utils/images";
 
 const Menu = (props) => {

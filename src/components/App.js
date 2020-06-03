@@ -8,17 +8,17 @@ import {
   Redirect,
 } from "react-router-dom";
 
-import "./app.scss";
+import "./App.scss";
 import { fetchData } from "../actions/data";
 import { selectPage, hideMore, toggleMore } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
 import { showMenu, hideMenu, setTheme, setLanguage } from "../actions/menu";
-import Splash from "./splash";
-import NotFound from "./notFound";
-import Nav from "./nav";
-import Page from "./page";
-import Footer from "./footer";
-import Menu from "./menu";
+import Splash from "./Splash";
+import NotFound from "./NotFound";
+import Nav from "./Nav";
+import Page from "./Page";
+import Footer from "./Footer";
+import Menu from "./Menu";
 
 class App extends Component {
   componentDidMount() {

@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import * as classnames from "classnames";
 
-import "./nav.scss";
-import Item from "./item";
+import "./Nav.scss";
+import Item from "./Item";
 
 const Nav = (props) => {
   const {

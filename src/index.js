@@ -7,7 +7,7 @@ import "./css/reset.css";
 import "./css/fonts.css";
 import "./css/index.css";
 import store from "./stores";
-import App from "./components/app";
+import App from "./components/App";
 
 ReactDOM.render(
   <Provider store={store}>
