@@ -1,21 +1,19 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import * as classnames from "classnames";
 
 import "./Nav.scss";
 import Item from "./Item";
+import { toggleMore } from "../actions/page";
+import { showMenu } from "../actions/menu";
 
 const Nav = (props) => {
-  const {
-    pages,
-    selectedPage,
-    more,
-    selectPage,
-    showFlash,
-    hideFlash,
-    showMenu,
-    toggleMore,
-  } = props;
+  const dispatch = useDispatch();
+
+  const more = useSelector((state) => state.page.more);
+
+  const { pages } = props;
 
   const renderItems = (pages) => {
     return Object.values(pages).map((page) => {
@@ -23,13 +21,7 @@ const Nav = (props) => {
 
       return (
         <Link key={id} to={`/p/${slug}`}>
-          <Item
-            page={page}
-            selectedPage={selectedPage}
-            selectPage={selectPage}
-            showFlash={showFlash}
-            hideFlash={hideFlash}
-          />
+          <Item page={page} />
         </Link>
       );
     });
@@ -54,7 +46,7 @@ const Nav = (props) => {
 
   return (
     <div className="nav">
-      <div className="menu-open" onClick={showMenu}></div>
+      <div className="menu-open" onClick={() => dispatch(showMenu())}></div>
 
       {visiblePagesRendered}
 
@@ -63,7 +55,7 @@ const Nav = (props) => {
         onClick={(event) => {
           event.stopPropagation();
 
-          toggleMore();
+          dispatch(toggleMore());
         }}
       >
         <div className={hiddenClasses}>{hiddenPagesRendered}</div>

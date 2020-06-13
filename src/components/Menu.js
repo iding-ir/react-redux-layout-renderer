@@ -1,21 +1,19 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import * as classnames from "classnames";
 
 import "./Menu.scss";
 import Select from "./Select";
 import { themeImage, languageImage } from "../utils/images";
+import { hideMenu, setTheme, setLanguage } from "../actions/menu";
 
 const Menu = (props) => {
-  const {
-    data,
-    items,
-    theme,
-    language,
-    visible,
-    hideMenu,
-    setTheme,
-    setLanguage,
-  } = props;
+  const dispatch = useDispatch();
+
+  const data = useSelector((state) => state.data);
+  const menu = useSelector((state) => state.menu);
+
+  const { items } = props;
 
   const themes = [
     { value: "light", title: "Light" },
@@ -30,7 +28,7 @@ const Menu = (props) => {
   });
 
   const classes = classnames("menu", {
-    "is-visible": visible,
+    "is-visible": menu.visible,
   });
 
   const renderMenuItems = () => {
@@ -47,23 +45,23 @@ const Menu = (props) => {
 
   return (
     <div className={classes}>
-      <div className="menu-close" onClick={hideMenu}></div>
+      <div className="menu-close" onClick={() => dispatch(hideMenu())}></div>
 
       <div className="menu-container">
         <div className="settings">
           <form>
             <Select
               image={themeImage}
-              value={theme}
+              value={menu.theme}
               items={themes}
-              onChange={setTheme}
+              onChange={(theme) => dispatch(setTheme(theme))}
             />
 
             <Select
               image={languageImage}
-              value={language}
+              value={menu.language}
               items={languages}
-              onChange={setLanguage}
+              onChange={(language) => dispatch(setLanguage(language))}
             />
           </form>
         </div>

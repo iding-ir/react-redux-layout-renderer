@@ -1,10 +1,17 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import * as classnames from "classnames";
 
 import "./Item.scss";
+import { selectPage } from "../actions/page";
+import { showFlash, hideFlash } from "../actions/flash";
 
 const Item = (props) => {
-  const { page, selectedPage, selectPage, showFlash, hideFlash } = props;
+  const dispatch = useDispatch();
+
+  const selectedPage = useSelector((state) => state.page.selected);
+
+  const { page } = props;
 
   const { id, title, icon } = page;
 
@@ -18,12 +25,12 @@ const Item = (props) => {
   };
 
   const onClick = (id) => {
-    selectPage(id);
+    dispatch(selectPage(id));
 
-    showFlash();
+    dispatch(showFlash());
 
     setTimeout(() => {
-      hideFlash();
+      dispatch(hideFlash());
     }, 1000);
   };
 
