@@ -7,6 +7,7 @@ import "./css/reset.css";
 import "./css/fonts.css";
 import "./css/index.css";
 import store from "./stores";
+import "./localization";
 import App from "./components/App";
 
 ReactDOM.render(

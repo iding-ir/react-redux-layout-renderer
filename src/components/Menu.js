@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import * as classnames from "classnames";
 
 import "./Menu.scss";
@@ -8,6 +9,7 @@ import { themeImage, languageImage } from "../utils/images";
 import { hideMenu, setTheme, setLanguage } from "../actions/menu";
 
 const Menu = (props) => {
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
   const data = useSelector((state) => state.data);
@@ -16,8 +18,8 @@ const Menu = (props) => {
   const { items } = props;
 
   const themes = [
-    { value: "light", title: "Light" },
-    { value: "dark", title: "Dark" },
+    { value: "light", title: t("menu.theme.light") },
+    { value: "dark", title: t("menu.theme.dark") },
   ];
 
   const languages = Object.keys(data).map((key) => {
