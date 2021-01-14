@@ -1,9 +1,10 @@
 import { FETCH_DATA } from "../constants";
 import data from "../apis/data";
+import { IData } from "../interfaces";
 
 export interface IAction {
   type: string;
-  payload: any;
+  payload: IData;
 }
 
 export const fetchData = () => async (dispatch: any): Promise<any> => {

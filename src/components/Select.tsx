@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 
 import "./Select.scss";
+import { ISelect } from "../interfaces";
 
 interface Props {
-  items: any[];
+  items: ISelect[];
   image: string;
-  value: any;
-  onChange: (event: any) => void;
+  defaultValue: string;
+  onChange: (value: string) => void;
 }
 
 const Select = (props: Props) => {
-  const { items, image, value, onChange } = props;
+  const { items, image, defaultValue, onChange } = props;
 
-  const [val, setVal] = useState(value);
+  const [value, setValue] = useState(defaultValue);
 
   const renderOption = () => {
-    return items.map((item: any, index: number) => {
+    return items.map((item: ISelect, index: number) => {
       const { value, title } = item;
 
       return (
@@ -36,9 +37,10 @@ const Select = (props: Props) => {
       <div className="image" style={style}></div>
 
       <select
-        value={val}
-        onChange={(event: any) => {
-          setVal(event.target.value);
+        value={value}
+        onChange={(event: React.ChangeEvent<HTMLSelectElement>) => {
+          setValue(event.target.value);
+
           onChange(event.target.value);
         }}
       >

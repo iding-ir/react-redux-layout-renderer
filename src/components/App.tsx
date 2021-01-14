@@ -11,14 +11,16 @@ import "./App.scss";
 import { fetchData } from "../actions/data";
 import { selectPage } from "../actions/page";
 import { hideMore } from "../actions/more";
-import { setTheme, setLanguage } from "../actions/settings";
+import { setLanguage } from "../actions/settings";
 import Splash from "./Splash";
 import NotFound from "./NotFound";
 import Nav from "./Nav";
-import Page, { IPage } from "./Page";
+import Page from "./Page";
+import { IPage } from "../interfaces";
 import Footer from "./Footer";
 import Menu from "./Menu";
 import { IState } from "../reducers";
+import { initialData } from "../reducers/data";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -33,7 +35,7 @@ const App = () => {
   }, []);
 
   const { language } = settings;
-  const currentData = data[language];
+  const currentData = data[language] || initialData;
 
   const { splash, pages, footer, notFound, menuItems } = currentData;
 
@@ -53,8 +55,8 @@ const App = () => {
     const { slug } = match.params;
 
     const page = Object.values(pages).filter(
-      (page: any) => page.slug === slug
-    )[0] as IPage;
+      (page: IPage) => page.slug === slug
+    )[0];
 
     if (pages.length === 0) {
       return "";

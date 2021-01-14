@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./NotFound.scss";
-import { IHeader } from "./Splash";
+import { IHeader } from "../interfaces";
 
 interface Props {
   header: IHeader;

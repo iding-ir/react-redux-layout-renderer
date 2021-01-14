@@ -1,11 +1,7 @@
 import React from "react";
 
 import "./Splash.scss";
-
-export interface IHeader {
-  title: string;
-  description: string;
-}
+import { IHeader } from "../interfaces";
 
 interface Props {
   header: IHeader;

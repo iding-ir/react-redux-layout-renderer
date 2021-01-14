@@ -3,14 +3,7 @@ import classnames from "classnames";
 import showdown from "showdown";
 
 import "./Page.scss";
-
-export interface IPage {
-  id: number;
-  title: string;
-  content: string;
-  icon: string;
-  slug: string;
-}
+import { IPage } from "../interfaces";
 
 interface Props {
   page: IPage;

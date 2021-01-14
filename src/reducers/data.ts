@@ -1,41 +1,31 @@
 import { FETCH_DATA } from "../constants";
 import { IAction } from "../actions/data";
-import { IHeader } from "../components/Splash";
+import { IData } from "../interfaces";
 
+export const initialData = {
+  language: "",
+  header: {
+    title: "",
+    description: "",
+  },
+  footer: "",
+  pages: [],
+  menuItems: [],
+  splash: {
+    title: "",
+    description: "",
+  },
+  notFound: {
+    title: "",
+    description: "",
+  },
+};
 export interface IStateData {
-  [key: string]: {
-    language: string;
-    header: {
-      title: string;
-      description: string;
-    };
-    footer: string;
-    pages: any[];
-    menuItems: any[];
-    splash: IHeader;
-    notFound: IHeader;
-  };
+  [key: string]: IData;
 }
 
 const initialState: IStateData = {
-  en: {
-    language: "",
-    header: {
-      title: "",
-      description: "",
-    },
-    footer: "",
-    pages: [],
-    menuItems: [],
-    splash: {
-      title: "",
-      description: "",
-    },
-    notFound: {
-      title: "",
-      description: "",
-    },
-  },
+  en: initialData,
 };
 
 const reducer = (state = initialState, action: IAction) => {

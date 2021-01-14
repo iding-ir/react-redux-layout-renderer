@@ -2,7 +2,7 @@ import { SELECT_PAGE } from "../constants";
 import { IAction } from "../actions/page";
 
 export interface IStatePage {
-  selected: any;
+  selected: number | null;
 }
 
 const initialState: IStatePage = {

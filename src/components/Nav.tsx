@@ -8,7 +8,7 @@ import Item from "./Item";
 import { toggleMore } from "../actions/more";
 import { showMenu } from "../actions/menu";
 import { IState } from "../reducers";
-import { IPage } from "./Page";
+import { IPage } from "../interfaces";
 
 interface Props {
   pages: IPage[];

@@ -9,9 +9,10 @@ import { themeImage, languageImage } from "../utils/images";
 import { hideMenu } from "../actions/menu";
 import { setTheme, setLanguage } from "../actions/settings";
 import { IState } from "../reducers";
+import { IMenuItem } from "../interfaces";
 
 interface Props {
-  items: any;
+  items: IMenuItem[];
 }
 
 const Menu = (props: Props) => {
@@ -41,7 +42,7 @@ const Menu = (props: Props) => {
   });
 
   const renderMenuItems = () => {
-    return items.map((item: any, index: number) => {
+    return items.map((item: IMenuItem, index: number) => {
       const { url, title } = item;
 
       return (
@@ -61,14 +62,14 @@ const Menu = (props: Props) => {
           <form>
             <Select
               image={themeImage}
-              value={settings.theme}
+              defaultValue={settings.theme}
               items={themes}
               onChange={(theme) => dispatch(setTheme(theme))}
             />
 
             <Select
               image={languageImage}
-              value={settings.language}
+              defaultValue={settings.language}
               items={languages}
               onChange={(language) => dispatch(setLanguage(language))}
             />
