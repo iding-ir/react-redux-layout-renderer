@@ -16,14 +16,15 @@ interface Props {
 }
 
 const Menu = (props: Props) => {
+  const { items } = props;
+
   const { t } = useTranslation();
+
   const dispatch = useDispatch();
 
   const data = useSelector((state: IState) => state.data);
   const menu = useSelector((state: IState) => state.menu);
   const settings = useSelector((state: IState) => state.settings);
-
-  const { items } = props;
 
   const themes = [
     { value: "light", title: t("menu.theme.light") },

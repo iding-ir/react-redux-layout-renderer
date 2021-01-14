@@ -34,13 +34,15 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { language } = settings;
+  const { theme, language } = settings;
+
   const currentData = data[language] || initialData;
 
   const { splash, pages, footer, notFound, menuItems } = currentData;
 
   const splashRouteRenderer = (props: any) => {
     const { match } = props;
+
     const { language } = match.params;
 
     setTimeout(() => {
@@ -52,6 +54,7 @@ const App = () => {
 
   const pageRouteRenderer = (props: any) => {
     const { match } = props;
+
     const { slug } = match.params;
 
     const page = Object.values(pages).filter(
@@ -73,11 +76,15 @@ const App = () => {
     return <Page page={page} flash={flash} />;
   };
 
+  const pageNotFoundRenderer = () => {
+    return <NotFound header={notFound} />;
+  };
+
   return (
     <Router>
       <div
         className="app"
-        data-theme={settings.theme}
+        data-theme={theme}
         onClick={() => dispatch(hideMore())}
       >
         <Switch>
@@ -87,7 +94,7 @@ const App = () => {
 
           <Route exact path="/p/:slug" render={pageRouteRenderer} />
 
-          <Route path="*" render={() => <NotFound header={notFound} />} />
+          <Route path="*" render={pageNotFoundRenderer} />
         </Switch>
 
         <Nav pages={pages} />

@@ -15,11 +15,11 @@ interface Props {
 }
 
 const Nav = (props: Props) => {
+  const { pages } = props;
+
   const dispatch = useDispatch();
 
   const more = useSelector((state: IState) => state.more.visible);
-
-  const { pages } = props;
 
   const renderItems = (pages: IPage[]) => {
     return Object.values(pages).map((page: IPage) => {
