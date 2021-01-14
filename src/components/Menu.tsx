@@ -1,19 +1,26 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import * as classnames from "classnames";
+import classnames from "classnames";
 
 import "./Menu.scss";
 import Select from "./Select";
 import { themeImage, languageImage } from "../utils/images";
-import { hideMenu, setTheme, setLanguage } from "../actions/menu";
+import { hideMenu } from "../actions/menu";
+import { setTheme, setLanguage } from "../actions/settings";
+import { IState } from "../reducers";
 
-const Menu = (props) => {
+interface Props {
+  items: any;
+}
+
+const Menu = (props: Props) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const data = useSelector((state) => state.data);
-  const menu = useSelector((state) => state.menu);
+  const data = useSelector((state: IState) => state.data);
+  const menu = useSelector((state: IState) => state.menu);
+  const settings = useSelector((state: IState) => state.settings);
 
   const { items } = props;
 
@@ -34,7 +41,7 @@ const Menu = (props) => {
   });
 
   const renderMenuItems = () => {
-    return items.map((item, index) => {
+    return items.map((item: any, index: number) => {
       const { url, title } = item;
 
       return (
@@ -54,14 +61,14 @@ const Menu = (props) => {
           <form>
             <Select
               image={themeImage}
-              value={menu.theme}
+              value={settings.theme}
               items={themes}
               onChange={(theme) => dispatch(setTheme(theme))}
             />
 
             <Select
               image={languageImage}
-              value={menu.language}
+              value={settings.language}
               items={languages}
               onChange={(language) => dispatch(setLanguage(language))}
             />

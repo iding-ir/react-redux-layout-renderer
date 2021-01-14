@@ -1,8 +1,13 @@
 import React from "react";
 
 import "./NotFound.scss";
+import { IHeader } from "./Splash";
 
-const NotFound = (props) => {
+interface Props {
+  header: IHeader;
+}
+
+const NotFound = (props: Props) => {
   const { title, description } = props.header;
 
   return (
@@ -19,6 +24,6 @@ NotFound.defaultProps = {
     title: "404",
     description: "",
   },
-};
+} as Partial<Props>;
 
 export default NotFound;

@@ -1,22 +1,28 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import * as classnames from "classnames";
+import classnames from "classnames";
 
 import "./Nav.scss";
 import Item from "./Item";
-import { toggleMore } from "../actions/page";
+import { toggleMore } from "../actions/more";
 import { showMenu } from "../actions/menu";
+import { IState } from "../reducers";
+import { IPage } from "./Page";
 
-const Nav = (props) => {
+interface Props {
+  pages: IPage[];
+}
+
+const Nav = (props: Props) => {
   const dispatch = useDispatch();
 
-  const more = useSelector((state) => state.page.more);
+  const more = useSelector((state: IState) => state.more.visible);
 
   const { pages } = props;
 
-  const renderItems = (pages) => {
-    return Object.values(pages).map((page) => {
+  const renderItems = (pages: IPage[]) => {
+    return Object.values(pages).map((page: IPage) => {
       const { id, slug } = page;
 
       return (
@@ -27,9 +33,13 @@ const Nav = (props) => {
     });
   };
 
-  const visiblePages = pages.slice(0, process.env.REACT_APP_VISIBLE_NAV_ITEMS);
+  const visiblePages = pages.slice(
+    0,
+    (process.env.REACT_APP_VISIBLE_NAV_ITEMS as unknown) as number
+  );
+
   const hiddenPages = pages.slice(
-    process.env.REACT_APP_VISIBLE_NAV_ITEMS,
+    (process.env.REACT_APP_VISIBLE_NAV_ITEMS as unknown) as number,
     pages.length
   );
 

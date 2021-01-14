@@ -2,7 +2,11 @@ import React from "react";
 
 import "./Footer.scss";
 
-const Footer = (props) => {
+interface Props {
+  footer: string;
+}
+
+const Footer = (props: Props) => {
   const { footer } = props;
 
   return <div className="footer">{footer}</div>;

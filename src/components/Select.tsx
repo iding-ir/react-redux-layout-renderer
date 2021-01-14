@@ -1,14 +1,21 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 import "./Select.scss";
 
-const Select = (props) => {
+interface Props {
+  items: any[];
+  image: string;
+  value: any;
+  onChange: (event: any) => void;
+}
+
+const Select = (props: Props) => {
   const { items, image, value, onChange } = props;
 
-  const selectElement = useRef(null);
+  const [val, setVal] = useState(value);
 
   const renderOption = () => {
-    return items.map((item, index) => {
+    return items.map((item: any, index: number) => {
       const { value, title } = item;
 
       return (
@@ -29,10 +36,10 @@ const Select = (props) => {
       <div className="image" style={style}></div>
 
       <select
-        value={value || ""}
-        ref={selectElement}
-        onChange={() => {
-          onChange(selectElement.current.value);
+        value={val}
+        onChange={(event: any) => {
+          setVal(event.target.value);
+          onChange(event.target.value);
         }}
       >
         {renderOption()}

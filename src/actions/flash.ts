@@ -1,12 +1,16 @@
 import { SHOW_FLASH, HIDE_FLASH } from "../constants";
 
-export const showFlash = () => {
+export interface IAction {
+  type: string;
+}
+
+export const showFlash = (): IAction => {
   return {
     type: SHOW_FLASH,
   };
 };
 
-export const hideFlash = () => {
+export const hideFlash = (): IAction => {
   return {
     type: HIDE_FLASH,
   };

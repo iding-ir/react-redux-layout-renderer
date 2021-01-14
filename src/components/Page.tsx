@@ -1,10 +1,23 @@
 import React from "react";
-import * as classnames from "classnames";
+import classnames from "classnames";
 import showdown from "showdown";
 
 import "./Page.scss";
 
-const Page = (props) => {
+export interface IPage {
+  id: number;
+  title: string;
+  content: string;
+  icon: string;
+  slug: string;
+}
+
+interface Props {
+  page: IPage;
+  flash: boolean;
+}
+
+const Page = (props: Props) => {
   const { page, flash } = props;
 
   const { title, content } = page;

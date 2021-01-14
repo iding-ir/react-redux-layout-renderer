@@ -9,37 +9,36 @@ import {
 
 import "./App.scss";
 import { fetchData } from "../actions/data";
-import { selectPage, hideMore } from "../actions/page";
-import { setTheme, setLanguage } from "../actions/menu";
+import { selectPage } from "../actions/page";
+import { hideMore } from "../actions/more";
+import { setTheme, setLanguage } from "../actions/settings";
 import Splash from "./Splash";
 import NotFound from "./NotFound";
 import Nav from "./Nav";
-import Page from "./Page";
+import Page, { IPage } from "./Page";
 import Footer from "./Footer";
 import Menu from "./Menu";
+import { IState } from "../reducers";
 
 const App = () => {
   const dispatch = useDispatch();
 
-  const data = useSelector((state) => state.data);
-  const flash = useSelector((state) => state.flash);
-  const menu = useSelector((state) => state.menu);
+  const data = useSelector((state: IState) => state.data);
+  const flash = useSelector((state: IState) => state.flash.visible);
+  const settings = useSelector((state: IState) => state.settings);
 
   useEffect(() => {
     dispatch(fetchData());
-
-    const theme = localStorage.getItem("theme");
-    const language = localStorage.getItem("language");
-
-    dispatch(setTheme(theme));
-    dispatch(setLanguage(language));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { language } = menu;
-  const currentData = data[language] || data[Object.keys(data)[0]];
+  const { language } = settings;
+  const currentData = data[language];
+
   const { splash, pages, footer, notFound, menuItems } = currentData;
 
-  const splashRouteRenderer = ({ match }) => {
+  const splashRouteRenderer = (props: any) => {
+    const { match } = props;
     const { language } = match.params;
 
     setTimeout(() => {
@@ -49,10 +48,13 @@ const App = () => {
     return <Splash header={splash} />;
   };
 
-  const pageRouteRenderer = ({ match }) => {
+  const pageRouteRenderer = (props: any) => {
+    const { match } = props;
     const { slug } = match.params;
 
-    const page = Object.values(pages).filter((page) => page.slug === slug)[0];
+    const page = Object.values(pages).filter(
+      (page: any) => page.slug === slug
+    )[0] as IPage;
 
     if (pages.length === 0) {
       return "";
@@ -73,7 +75,7 @@ const App = () => {
     <Router>
       <div
         className="app"
-        theme={menu.theme}
+        data-theme={settings.theme}
         onClick={() => dispatch(hideMore())}
       >
         <Switch>

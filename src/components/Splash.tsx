@@ -2,7 +2,16 @@ import React from "react";
 
 import "./Splash.scss";
 
-const Splash = (props) => {
+export interface IHeader {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  header: IHeader;
+}
+
+const Splash = (props: Props) => {
   const { title, description } = props.header;
 
   return (
@@ -19,6 +28,6 @@ Splash.defaultProps = {
     title: "",
     description: "",
   },
-};
+} as Partial<Props>;
 
 export default Splash;

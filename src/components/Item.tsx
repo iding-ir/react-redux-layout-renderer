@@ -1,15 +1,21 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as classnames from "classnames";
+import classnames from "classnames";
 
 import "./Item.scss";
 import { selectPage } from "../actions/page";
 import { showFlash, hideFlash } from "../actions/flash";
+import { IPage } from "./Page";
+import { IState } from "../reducers";
 
-const Item = (props) => {
+interface Props {
+  page: IPage;
+}
+
+const Item = (props: Props) => {
   const dispatch = useDispatch();
 
-  const selectedPage = useSelector((state) => state.page.selected);
+  const selectedPage = useSelector((state: IState) => state.page.selected);
 
   const { page } = props;
 
@@ -24,7 +30,7 @@ const Item = (props) => {
     maskImage: `url(${icon})`,
   };
 
-  const onClick = (id) => {
+  const onClick = (id: number) => {
     dispatch(selectPage(id));
 
     dispatch(showFlash());
