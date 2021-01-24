@@ -3,14 +3,6 @@ export interface IHeader {
   description: string;
 }
 
-export interface IPage {
-  id: number;
-  title: string;
-  content: string;
-  icon: string;
-  slug: string;
-}
-
 export interface IMenuItem {
   title: string;
   url: string;
@@ -19,6 +11,14 @@ export interface IMenuItem {
 export interface ISelect {
   title: string;
   value: string;
+}
+
+export interface IPage {
+  id: number;
+  title: string;
+  content: string;
+  icon: string;
+  slug: string;
 }
 
 export interface IData {
