@@ -5,9 +5,9 @@ import classnames from "classnames";
 import showdown from "showdown";
 
 import "./Page.scss";
-import { IPage } from "../interfaces";
-import { IState } from "../reducers";
-import { selectPage } from "../actions/page";
+import { IPage } from "../../interfaces";
+import { IState } from "../../reducers";
+import { selectPage } from "../../actions/page";
 
 interface Props {
   pages: IPage[];

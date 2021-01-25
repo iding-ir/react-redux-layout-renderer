@@ -3,17 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 
 import "./App.scss";
-import { fetchData } from "../actions/data";
-import { hideMore } from "../actions/more";
-import Splash from "./Splash";
-import NotFound from "./NotFound";
-import Nav from "./Nav";
-import Page from "./Page";
-import Footer from "./Footer";
-import Menu from "./Menu";
-import Language from "./Language";
-import { IState } from "../reducers";
-import { initialData } from "../reducers/data";
+import { fetchData } from "../../actions/data";
+import { hideMore } from "../../actions/more";
+import Splash from "../Splash/Splash";
+import NotFound from "../NotFound/NotFound";
+import Nav from "../Nav/Nav";
+import Page from "../Page/Page";
+import Footer from "../Footer/Footer";
+import Menu from "../Menu/Menu";
+import Language from "../Language/Language";
+import { IState } from "../../reducers";
+import { initialData } from "../../reducers/data";
 
 const App = () => {
   const dispatch = useDispatch();

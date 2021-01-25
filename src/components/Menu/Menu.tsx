@@ -4,12 +4,12 @@ import { useTranslation } from "react-i18next";
 import classnames from "classnames";
 
 import "./Menu.scss";
-import Select from "./Select";
-import { themeImage, languageImage } from "../utils/images";
-import { hideMenu } from "../actions/menu";
-import { setTheme, setLanguage } from "../actions/settings";
-import { IState } from "../reducers";
-import { IMenuItem } from "../interfaces";
+import Select from "../Select/Select";
+import { themeImage, languageImage } from "../../utils/images";
+import { hideMenu } from "../../actions/menu";
+import { setTheme, setLanguage } from "../../actions/settings";
+import { IState } from "../../reducers";
+import { IMenuItem } from "../../interfaces";
 
 interface Props {
   items: IMenuItem[];

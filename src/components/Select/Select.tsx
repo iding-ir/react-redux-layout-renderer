@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./Select.scss";
-import { ISelect } from "../interfaces";
+import { ISelect } from "../../interfaces";
 
 interface Props {
   items: ISelect[];

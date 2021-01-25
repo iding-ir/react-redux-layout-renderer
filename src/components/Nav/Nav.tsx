@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import classnames from "classnames";
 
 import "./Nav.scss";
-import Item from "./Item";
-import { toggleMore } from "../actions/more";
-import { showMenu } from "../actions/menu";
-import { IState } from "../reducers";
-import { IPage } from "../interfaces";
+import Item from "../Item/Item";
+import { toggleMore } from "../../actions/more";
+import { showMenu } from "../../actions/menu";
+import { IState } from "../../reducers";
+import { IPage } from "../../interfaces";
 
 interface Props {
   pages: IPage[];

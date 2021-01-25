@@ -49,14 +49,14 @@
     background-color: var(--color-secondary-dark);
 
     &::before {
-      mask-image: url("../assets/images/icon-menu.svg");
+      mask-image: url("../../assets/images/icon-menu.svg");
       background-color: #ffffff;
     }
   }
 
   .nav-more {
     &::before {
-      mask-image: url("../assets/images/icon-more.svg");
+      mask-image: url("../../assets/images/icon-more.svg");
       background-color: var(--color-secondary-dark);
     }
 

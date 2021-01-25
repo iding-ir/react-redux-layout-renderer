@@ -3,10 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import classnames from "classnames";
 
 import "./Item.scss";
-import { selectPage } from "../actions/page";
-import { showFlash, hideFlash } from "../actions/flash";
-import { IPage } from "../interfaces";
-import { IState } from "../reducers";
+import { selectPage } from "../../actions/page";
+import { showFlash, hideFlash } from "../../actions/flash";
+import { IPage } from "../../interfaces";
+import { IState } from "../../reducers";
 
 interface Props {
   page: IPage;

@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { Redirect, useParams } from "react-router-dom";
 
 import "./Language.scss";
-import { setLanguage } from "../actions/settings";
+import { setLanguage } from "../../actions/settings";
 
 const Language = () => {
   const dispatch = useDispatch();
