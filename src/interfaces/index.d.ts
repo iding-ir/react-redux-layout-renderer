@@ -23,6 +23,7 @@ export interface IPage {
 
 export interface IData {
   language: string;
+  logo: string;
   header: IHeader;
   footer: string;
   pages: IPage[];

@@ -9,6 +9,7 @@ import { toggleMore } from "../../actions/more";
 import { showMenu } from "../../actions/menu";
 import { IState } from "../../reducers";
 import { IPage } from "../../interfaces";
+import Logo from "../Logo/Logo";
 
 interface Props {
   pages: IPage[];
@@ -22,6 +23,14 @@ const Nav = (props: Props) => {
   const more = useSelector((state: IState) => state.more.visible);
   const language = useSelector((state: IState) => state.settings.language);
 
+  const visibleNavItems = (process.env
+    .REACT_APP_VISIBLE_NAV_ITEMS as unknown) as number;
+
+  const visiblePages = pages.slice(0, visibleNavItems);
+  const hiddenPages = pages.slice(visibleNavItems, pages.length);
+
+  const shouldDisplayMore = pages.length > visibleNavItems;
+
   const renderItems = (pages: IPage[]) => {
     return Object.values(pages).map((page: IPage) => {
       const { id, slug } = page;
@@ -34,18 +43,19 @@ const Nav = (props: Props) => {
     });
   };
 
-  const visiblePages = pages.slice(
-    0,
-    (process.env.REACT_APP_VISIBLE_NAV_ITEMS as unknown) as number
-  );
+  const renderMore = () =>
+    shouldDisplayMore && (
+      <div
+        className={moreClasses}
+        onClick={(event) => {
+          event.stopPropagation();
 
-  const hiddenPages = pages.slice(
-    (process.env.REACT_APP_VISIBLE_NAV_ITEMS as unknown) as number,
-    pages.length
-  );
-
-  const visiblePagesRendered = renderItems(visiblePages);
-  const hiddenPagesRendered = renderItems(hiddenPages);
+          dispatch(toggleMore());
+        }}
+      >
+        <div className={hiddenClasses}>{renderItems(hiddenPages)}</div>
+      </div>
+    );
 
   const moreClasses = classnames("nav-more", {
     "is-visible": hiddenPages.length,
@@ -59,18 +69,11 @@ const Nav = (props: Props) => {
     <div className="nav">
       <div className="menu-open" onClick={() => dispatch(showMenu())}></div>
 
-      {visiblePagesRendered}
+      {renderItems(visiblePages)}
 
-      <div
-        className={moreClasses}
-        onClick={(event) => {
-          event.stopPropagation();
+      {renderMore()}
 
-          dispatch(toggleMore());
-        }}
-      >
-        <div className={hiddenClasses}>{hiddenPagesRendered}</div>
-      </div>
+      <Logo />
     </div>
   );
 };

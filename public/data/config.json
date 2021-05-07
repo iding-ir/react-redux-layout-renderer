@@ -1,6 +1,7 @@
 {
   "en": {
     "language": "English",
+    "logo": "data/en/logo.svg",
     "splash": {
       "title": "[EN] Lorem Ipsum",
       "description": "[EN] Lorem ipsum dolor sit amet"
@@ -82,6 +83,7 @@
   },
   "de": {
     "language": "Deutsch",
+    "logo": "data/de/logo.svg",
     "splash": {
       "title": "[DE] Lorem Ipsum",
       "description": "[DE] Lorem ipsum dolor sit amet"

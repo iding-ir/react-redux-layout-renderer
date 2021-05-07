@@ -4,6 +4,7 @@ import { IData } from "../interfaces";
 
 export const initialData = {
   language: "",
+  logo: "",
   header: {
     title: "",
     description: "",
