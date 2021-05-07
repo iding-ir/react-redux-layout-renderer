@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Redirect } from "react-router-dom";
 import classnames from "classnames";
@@ -8,6 +8,7 @@ import "./Page.scss";
 import { IPage } from "../../interfaces";
 import { IState } from "../../reducers";
 import { selectPage, getPageContent } from "../../actions/page";
+import { usePage } from "../../hooks/usePage";
 
 interface Props {
   pages: IPage[];
@@ -23,23 +24,23 @@ const Page = (props: Props) => {
   const flash = useSelector((state: IState) => state.flash.visible);
   const pageContent = useSelector((state: IState) => state.page.content);
 
+  const { page, id, title, content } = usePage(pages, slug);
+
+  useEffect(() => {
+    dispatch(selectPage(id));
+
+    dispatch(getPageContent(content));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
+
   if (pages.length === 0) {
     return null;
   }
 
-  const page = Object.values(pages).filter(
-    (page: IPage) => page.slug === slug
-  )[0];
-
-  const { id, title, content } = page;
-
   if (page === undefined) {
     return <Redirect to="/404" />;
   }
-
-  dispatch(selectPage(id));
-
-  dispatch(getPageContent(content));
 
   const classes = classnames("page", {
     "is-flashing": flash,

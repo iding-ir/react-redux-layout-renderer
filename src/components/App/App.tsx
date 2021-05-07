@@ -13,7 +13,7 @@ import Footer from "../Footer/Footer";
 import Menu from "../Menu/Menu";
 import Language from "../Language/Language";
 import { IState } from "../../reducers";
-import { initialData } from "../../reducers/data";
+import { useData } from "../../hooks/useData";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -21,24 +21,26 @@ const App = () => {
   const data = useSelector((state: IState) => state.data);
   const settings = useSelector((state: IState) => state.settings);
 
+  const { theme, language } = settings;
+
+  const { splash, pages, footer, notFound, menuItems } = useData(
+    data,
+    language
+  );
+
   useEffect(() => {
     dispatch(fetchData());
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { theme, language } = settings;
-
-  const currentData = data[language] || initialData;
-
-  const { splash, pages, footer, notFound, menuItems } = currentData;
+  const handleClick = () => {
+    dispatch(hideMore());
+  };
 
   return (
     <Router>
-      <div
-        className="app"
-        data-theme={theme}
-        onClick={() => dispatch(hideMore())}
-      >
+      <div className="app" data-theme={theme} onClick={handleClick}>
         <Switch>
           <Route exact path="/">
             <Splash header={splash} />

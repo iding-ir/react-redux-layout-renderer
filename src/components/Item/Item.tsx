@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classnames from "classnames";
 
 import "./Item.scss";
-import { selectPage, getPageContent } from "../../actions/page";
+import { selectPage } from "../../actions/page";
 import { showFlash, hideFlash } from "../../actions/flash";
 import { IPage } from "../../interfaces";
 import { IState } from "../../reducers";
@@ -19,7 +19,7 @@ const Item = (props: Props) => {
 
   const { page } = props;
 
-  const { id, title, content, icon } = page;
+  const { id, title, icon } = page;
 
   const classes = classnames("item", {
     "is-selected": id === selectedPage,
@@ -30,10 +30,8 @@ const Item = (props: Props) => {
     maskImage: `url(${icon})`,
   };
 
-  const onClick = (id: number) => {
+  const onClick = () => {
     dispatch(selectPage(id));
-
-    dispatch(getPageContent(content));
 
     dispatch(showFlash());
 
@@ -43,7 +41,7 @@ const Item = (props: Props) => {
   };
 
   return (
-    <div className={classes} onClick={() => onClick(id)}>
+    <div className={classes} onClick={() => onClick()}>
       <div className="icon" style={style}></div>
 
       <div className="title">{title}</div>

@@ -16,6 +16,10 @@ export const selectPage = (id: number | null): IAction => {
 export const getPageContent = (content: string | null) => async (
   dispatch: any
 ): Promise<any> => {
+  if (!content) {
+    return;
+  }
+
   const response = await data.get(`${content}`);
 
   dispatch({
