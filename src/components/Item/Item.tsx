@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classnames from "classnames";
 
 import "./Item.scss";
-import { selectPage } from "../../actions/page";
+import { selectPage, getPageContent } from "../../actions/page";
 import { showFlash, hideFlash } from "../../actions/flash";
 import { IPage } from "../../interfaces";
 import { IState } from "../../reducers";
@@ -19,7 +19,7 @@ const Item = (props: Props) => {
 
   const { page } = props;
 
-  const { id, title, icon } = page;
+  const { id, title, content, icon } = page;
 
   const classes = classnames("item", {
     "is-selected": id === selectedPage,
@@ -32,6 +32,8 @@ const Item = (props: Props) => {
 
   const onClick = (id: number) => {
     dispatch(selectPage(id));
+
+    dispatch(getPageContent(content));
 
     dispatch(showFlash());
 

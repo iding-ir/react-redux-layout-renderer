@@ -1,8 +1,9 @@
-import { SELECT_PAGE } from "../constants";
+import { SELECT_PAGE, GET_PAGE_CONTENT } from "../constants";
+import data from "../apis/data";
 
 export interface IAction {
   type: string;
-  payload: number | null;
+  payload: string | number | null;
 }
 
 export const selectPage = (id: number | null): IAction => {
@@ -10,4 +11,15 @@ export const selectPage = (id: number | null): IAction => {
     type: SELECT_PAGE,
     payload: id,
   };
+};
+
+export const getPageContent = (content: string | null) => async (
+  dispatch: any
+): Promise<any> => {
+  const response = await data.get(`${content}`);
+
+  dispatch({
+    type: GET_PAGE_CONTENT,
+    payload: response.data,
+  });
 };

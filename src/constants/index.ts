@@ -1,6 +1,7 @@
 export const FETCH_DATA = "FETCH_DATA";
 
 export const SELECT_PAGE = "SELECT_PAGE";
+export const GET_PAGE_CONTENT = "GET_PAGE_CONTENT";
 
 export const SHOW_FLASH = "SHOW_FLASH";
 export const HIDE_FLASH = "HIDE_FLASH";

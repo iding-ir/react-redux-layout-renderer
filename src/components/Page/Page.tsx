@@ -7,7 +7,7 @@ import showdown from "showdown";
 import "./Page.scss";
 import { IPage } from "../../interfaces";
 import { IState } from "../../reducers";
-import { selectPage } from "../../actions/page";
+import { selectPage, getPageContent } from "../../actions/page";
 
 interface Props {
   pages: IPage[];
@@ -21,6 +21,7 @@ const Page = (props: Props) => {
   const { slug } = useParams() as any;
 
   const flash = useSelector((state: IState) => state.flash.visible);
+  const pageContent = useSelector((state: IState) => state.page.content);
 
   if (pages.length === 0) {
     return null;
@@ -30,13 +31,15 @@ const Page = (props: Props) => {
     (page: IPage) => page.slug === slug
   )[0];
 
-  const { title, content } = page;
+  const { id, title, content } = page;
 
   if (page === undefined) {
     return <Redirect to="/404" />;
   }
 
-  dispatch(selectPage(page.id));
+  dispatch(selectPage(id));
+
+  dispatch(getPageContent(content));
 
   const classes = classnames("page", {
     "is-flashing": flash,
@@ -50,7 +53,9 @@ const Page = (props: Props) => {
 
       <div
         className="content"
-        dangerouslySetInnerHTML={{ __html: converter.makeHtml(content) }}
+        dangerouslySetInnerHTML={{
+          __html: converter.makeHtml(pageContent || ""),
+        }}
       ></div>
 
       <div className="flash"></div>

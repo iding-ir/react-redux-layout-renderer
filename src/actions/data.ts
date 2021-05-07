@@ -8,7 +8,7 @@ export interface IAction {
 }
 
 export const fetchData = () => async (dispatch: any): Promise<any> => {
-  const response = await data.get("/db.json");
+  const response = await data.get("data/config.json");
 
   dispatch({
     type: FETCH_DATA,
