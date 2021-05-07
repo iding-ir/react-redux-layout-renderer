@@ -33,51 +33,51 @@
       {
         "id": 1,
         "slug": "augue",
-        "icon": "data/en/icons/augue.en.svg",
+        "icon": "data/en/icons/augue.svg",
         "title": "[EN] Augue",
-        "content": "data/en/pages/augue.en.md"
+        "content": "data/en/pages/augue.md"
       },
       {
         "id": 2,
         "slug": "non-sodales",
-        "icon": "data/en/icons/non-sodales.en.svg",
+        "icon": "data/en/icons/non-sodales.svg",
         "title": "[EN] Non sodales",
-        "content": "data/en/pages/non-sodales.en.md"
+        "content": "data/en/pages/non-sodales.md"
       },
       {
         "id": 3,
         "slug": "volutpat",
-        "icon": "data/en/icons/volutpat.en.svg",
+        "icon": "data/en/icons/volutpat.svg",
         "title": "[EN] Volutpat",
-        "content": "data/en/pages/volutpat.en.md"
+        "content": "data/en/pages/volutpat.md"
       },
       {
         "id": 4,
         "slug": "diam-quis",
-        "icon": "data/en/icons/diam-quis.en.svg",
+        "icon": "data/en/icons/diam-quis.svg",
         "title": "[EN] Diam quis",
-        "content": "data/en/pages/diam-quis.en.md"
+        "content": "data/en/pages/diam-quis.md"
       },
       {
         "id": 5,
         "slug": "aliquam",
-        "icon": "data/en/icons/aliquam.en.svg",
+        "icon": "data/en/icons/aliquam.svg",
         "title": "[EN] Aliquam",
-        "content": "data/en/pages/aliquam.en.md"
+        "content": "data/en/pages/aliquam.md"
       },
       {
         "id": 6,
         "slug": "tincidunt",
-        "icon": "data/en/icons/tincidunt.en.svg",
+        "icon": "data/en/icons/tincidunt.svg",
         "title": "[EN] Tincidunt",
-        "content": "data/en/pages/tincidunt.en.md"
+        "content": "data/en/pages/tincidunt.md"
       },
       {
         "id": 7,
         "slug": "nullam",
-        "icon": "data/en/icons/nullam.en.svg",
+        "icon": "data/en/icons/nullam.svg",
         "title": "[EN] Nullam",
-        "content": "data/en/pages/nullam.en.md"
+        "content": "data/en/pages/nullam.md"
       }
     ]
   },
@@ -115,51 +115,51 @@
       {
         "id": 1,
         "slug": "augue",
-        "icon": "data/de/icons/augue.de.svg",
+        "icon": "data/de/icons/augue.svg",
         "title": "[DE] Augue",
-        "content": "data/de/pages/augue.de.md"
+        "content": "data/de/pages/augue.md"
       },
       {
         "id": 2,
         "slug": "non-sodales",
-        "icon": "data/de/icons/non-sodales.de.svg",
+        "icon": "data/de/icons/non-sodales.svg",
         "title": "[DE] Non sodales",
-        "content": "data/de/pages/non-sodales.de.md"
+        "content": "data/de/pages/non-sodales.md"
       },
       {
         "id": 3,
         "slug": "volutpat",
-        "icon": "data/de/icons/volutpat.de.svg",
+        "icon": "data/de/icons/volutpat.svg",
         "title": "[DE] Volutpat",
-        "content": "data/de/pages/volutpat.de.md"
+        "content": "data/de/pages/volutpat.md"
       },
       {
         "id": 4,
         "slug": "diam-quis",
-        "icon": "data/de/icons/diam-quis.de.svg",
+        "icon": "data/de/icons/diam-quis.svg",
         "title": "[DE] Diam quis",
-        "content": "data/de/pages/diam-quis.de.md"
+        "content": "data/de/pages/diam-quis.md"
       },
       {
         "id": 5,
         "slug": "aliquam",
-        "icon": "data/de/icons/aliquam.de.svg",
+        "icon": "data/de/icons/aliquam.svg",
         "title": "[DE] Aliquam",
-        "content": "data/de/pages/aliquam.de.md"
+        "content": "data/de/pages/aliquam.md"
       },
       {
         "id": 6,
         "slug": "tincidunt",
-        "icon": "data/de/icons/tincidunt.de.svg",
+        "icon": "data/de/icons/tincidunt.svg",
         "title": "[DE] Tincidunt",
-        "content": "data/de/pages/tincidunt.de.md"
+        "content": "data/de/pages/tincidunt.md"
       },
       {
         "id": 7,
         "slug": "nullam",
-        "icon": "data/de/icons/nullam.de.svg",
+        "icon": "data/de/icons/nullam.svg",
         "title": "[DE] Nullam",
-        "content": "data/de/pages/nullam.de.md"
+        "content": "data/de/pages/nullam.md"
       }
     ]
   }

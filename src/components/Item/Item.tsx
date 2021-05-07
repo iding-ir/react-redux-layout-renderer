@@ -26,8 +26,8 @@ const Item = (props: Props) => {
   });
 
   const style = {
-    WebkitMaskImage: `url(${icon})`,
-    maskImage: `url(${icon})`,
+    WebkitMaskImage: `url("${icon}")`,
+    maskImage: `url("${icon}")`,
   };
 
   const onClick = () => {

@@ -46,6 +46,7 @@
   }
 
   .menu-open {
+    flex-shrink: 0;
     background-color: var(--color-secondary-dark);
 
     &::before {
@@ -55,6 +56,8 @@
   }
 
   .nav-more {
+    flex-shrink: 10;
+
     &::before {
       mask-image: url("../../assets/images/icon-more.svg");
       background-color: var(--color-secondary-dark);

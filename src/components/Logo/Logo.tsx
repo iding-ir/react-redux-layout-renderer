@@ -6,10 +6,10 @@ import { IState } from "../../reducers";
 
 const Logo = () => {
   const language = useSelector((state: IState) => state.settings.language);
-  const logo = useSelector((state: IState) => state.data)[language].logo;
+  const logo = useSelector((state: IState) => state.data)[language]?.logo;
 
   const style = {
-    backgroundImage: `url(${logo})`,
+    backgroundImage: `url("${logo}")`,
   };
 
   return (

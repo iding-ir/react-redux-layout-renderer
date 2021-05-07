@@ -28,8 +28,8 @@ const Select = (props: Props) => {
   };
 
   const style = {
-    WebkitMaskImage: `url(${image})`,
-    MaskImage: `url(${image})`,
+    WebkitMaskImage: `url("${image}")`,
+    MaskImage: `url("${image}")`,
   };
 
   return (
