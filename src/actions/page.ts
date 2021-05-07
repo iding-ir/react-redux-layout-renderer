@@ -1,4 +1,4 @@
-import { SELECT_PAGE, GET_PAGE_CONTENT } from "../constants";
+import { SELECT_PAGE, GET_PAGE_CONTENT, HIDE_FLASH } from "../constants";
 import data from "../apis/data";
 
 export interface IAction {
@@ -26,4 +26,10 @@ export const getPageContent = (content: string | null) => async (
     type: GET_PAGE_CONTENT,
     payload: response.data,
   });
+
+  setTimeout(() => {
+    dispatch({
+      type: HIDE_FLASH,
+    });
+  }, 500);
 };

@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 import "./Item.scss";
 import { selectPage } from "../../actions/page";
-import { showFlash, hideFlash } from "../../actions/flash";
+import { showFlash } from "../../actions/flash";
 import { IPage } from "../../interfaces";
 import { IState } from "../../reducers";
 
@@ -34,10 +34,6 @@ const Item = (props: Props) => {
     dispatch(selectPage(id));
 
     dispatch(showFlash());
-
-    setTimeout(() => {
-      dispatch(hideFlash());
-    }, 1000);
   };
 
   return (
