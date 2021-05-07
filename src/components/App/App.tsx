@@ -54,6 +54,10 @@ const App = () => {
             <Page pages={pages} />
           </Route>
 
+          <Route exact path="/l/:language/p/:slug">
+            <Page pages={pages} />
+          </Route>
+
           <Route path="*">
             <NotFound header={notFound} />
           </Route>

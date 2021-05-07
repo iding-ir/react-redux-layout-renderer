@@ -20,13 +20,14 @@ const Nav = (props: Props) => {
   const dispatch = useDispatch();
 
   const more = useSelector((state: IState) => state.more.visible);
+  const language = useSelector((state: IState) => state.settings.language);
 
   const renderItems = (pages: IPage[]) => {
     return Object.values(pages).map((page: IPage) => {
       const { id, slug } = page;
 
       return (
-        <Link key={id} to={`/p/${slug}`}>
+        <Link key={id} to={`/l/${language}/p/${slug}`}>
           <Item page={page} />
         </Link>
       );

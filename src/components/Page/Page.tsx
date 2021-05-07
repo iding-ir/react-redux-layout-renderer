@@ -9,6 +9,7 @@ import { IPage } from "../../interfaces";
 import { IState } from "../../reducers";
 import { selectPage, getPageContent } from "../../actions/page";
 import { usePage } from "../../hooks/usePage";
+import { setLanguage } from "../../actions/settings";
 
 interface Props {
   pages: IPage[];
@@ -19,10 +20,11 @@ const Page = (props: Props) => {
 
   const dispatch = useDispatch();
 
-  const { slug } = useParams() as any;
+  const { language, slug } = useParams() as any;
 
   const flash = useSelector((state: IState) => state.flash.visible);
   const pageContent = useSelector((state: IState) => state.page.content);
+  const settings = useSelector((state: IState) => state.settings);
 
   const { page, id, title, content } = usePage(pages, slug);
 
@@ -33,6 +35,12 @@ const Page = (props: Props) => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
+
+  useEffect(() => {
+    dispatch(setLanguage(language || settings.language));
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language]);
 
   if (pages.length === 0) {
     return null;
