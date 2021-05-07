@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Redirect } from "react-router-dom";
 import classnames from "classnames";
-import showdown from "showdown";
+import MarkdownView from "react-showdown";
 
 import "./Page.scss";
 import { IPage } from "../../interfaces";
@@ -45,18 +45,13 @@ const Page = (props: Props) => {
     "is-flashing": flash,
   });
 
-  const converter = new showdown.Converter();
-
   return (
     <div className={classes}>
       <div className="title">{title}</div>
 
-      <div
-        className="content"
-        dangerouslySetInnerHTML={{
-          __html: converter.makeHtml(pageContent || ""),
-        }}
-      ></div>
+      <div className="content">
+        <MarkdownView markdown={pageContent || ""} />
+      </div>
 
       <div className="flash"></div>
     </div>
