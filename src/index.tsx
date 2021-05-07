@@ -6,6 +6,7 @@ import "./css/vars.css";
 import "./css/reset.css";
 import "./css/fonts.css";
 import "./css/index.css";
+import "./index.scss";
 import store from "./stores";
 import "./localization";
 import App from "./components/App/App";
