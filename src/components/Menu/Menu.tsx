@@ -5,7 +5,8 @@ import classnames from "classnames";
 
 import "./Menu.scss";
 import Select from "../Select/Select";
-import { themeImage, languageImage } from "../../utils/images";
+import themeImage from "../../assets/images/icon-theme.svg";
+import languageImage from "../../assets/images/icon-language.svg";
 import { hideMenu } from "../../actions/menu";
 import { setTheme, setLanguage } from "../../actions/settings";
 import { IState } from "../../reducers";
