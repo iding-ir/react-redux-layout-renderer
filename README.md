@@ -6,7 +6,7 @@
 
 ## Intro
 
-Layout Renderer receives a standard JSON file and renders a themeable multilingual responsive web application.
+Layout Renderer receives a standard JSON file and a number of Markdown files and renders a themeable multilingual responsive web application.
 
 It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skills.
 
@@ -20,10 +20,13 @@ Input data is in the form of JSON.
 
 It supports html tags and markdown for page content.
 
+#### config.json:
+
 ```
 {
   "en": {
     "language": "English",
+    "logo": "data/en/logo.svg",
     "splash": {
       "title": "[EN] Lorem Ipsum",
       "description": "[EN] Lorem ipsum dolor sit amet"
@@ -37,7 +40,11 @@ It supports html tags and markdown for page content.
       {
         "title": "[EN] Curabitur",
         "url": "#"
-      }
+      },
+      {
+        "title": "[EN] Habitant",
+        "url": "#"
+      },
       {
         "title": "[EN] Dolore",
         "url": ""
@@ -50,59 +57,24 @@ It supports html tags and markdown for page content.
     "pages": [
       {
         "id": 1,
-        "slug": "augue",
-        "icon": "[BASE64_IMAGE]",
+        "slug": "en-augue",
+        "icon": "data/en/icons/augue.svg",
         "title": "[EN] Augue",
-        "content": "### [EN] Aliquet \nPorttitor lacus luctus [accumsan](#) tortor posuere."
+        "content": "data/en/pages/augue.md"
       },
       {
         "id": 2,
-        "slug": "non-sodales",
-        "icon": "[BASE64_IMAGE]",
+        "slug": "en-sodales",
+        "icon": "data/en/icons/non-sodales.svg",
         "title": "[EN] Non sodales",
-        "content": "### [EN] Viverra \nAdipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
-      }
-    ]
-  },
-  "de": {
-    "language": "Deutsch",
-    "splash": {
-      "title": "[DE] Lorem Ipsum",
-      "description": "[DE] Lorem ipsum dolor sit amet"
-    },
-    "footer": "[DE] Nam ornare tortor enim",
-    "notFound": {
-      "title": "[DE] 404",
-      "description": "[DE] Lorem ipsum dolor sit amet"
-    },
-    "menuItems": [
-      {
-        "title": "[DE] Curabitur",
-        "url": "#"
+        "content": "data/en/pages/non-sodales.md"
       },
       {
-        "title": "[DE] Dolore",
-        "url": ""
-      },
-      {
-        "title": "[DE] Fusce",
-        "url": "#"
-      }
-    ],
-    "pages": [
-      {
-        "id": 1,
-        "slug": "augue",
-        "icon": "[BASE64_IMAGE]",
-        "title": "[DE] Augue",
-        "content": "### [DE] Aliquet \nPorttitor lacus luctus [accumsan](#) tortor posuere."
-      },
-      {
-        "id": 2,
-        "slug": "non-sodales",
-        "icon": "[BASE64_IMAGE]",
-        "title": "[DE] Non sodales",
-        "content": "### [DE] Viverra \nAdipiscing at in tellus. Morbi tristique senectus et netus et malesuada fames ac."
+        "id": 3,
+        "slug": "en-volutpat",
+        "icon": "data/en/icons/volutpat.svg",
+        "title": "[EN] Volutpat",
+        "content": "data/en/pages/volutpat.md"
       }
     ]
   }
