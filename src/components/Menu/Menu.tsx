@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import classnames from "classnames";
+import { useHistory } from "react-router-dom";
 
 import "./Menu.scss";
 import Select from "../Select/Select";
@@ -18,6 +19,8 @@ interface Props {
 
 const Menu = (props: Props) => {
   const { items } = props;
+
+  const history = useHistory();
 
   const { t } = useTranslation();
 
@@ -73,7 +76,11 @@ const Menu = (props: Props) => {
               image={languageImage}
               defaultValue={settings.language}
               items={languages}
-              onChange={(language) => dispatch(setLanguage(language))}
+              onChange={(language) => {
+                dispatch(setLanguage(language));
+
+                history.push("/");
+              }}
             />
           </form>
         </div>
