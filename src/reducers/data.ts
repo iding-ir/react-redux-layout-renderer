@@ -5,13 +5,7 @@ import { IData } from "../interfaces";
 export const initialData = {
   language: "",
   logo: "",
-  header: {
-    title: "",
-    description: "",
-  },
-  footer: "",
-  pages: [],
-  menuItems: [],
+  flash: "",
   splash: {
     title: "",
     description: "",
@@ -20,6 +14,9 @@ export const initialData = {
     title: "",
     description: "",
   },
+  footer: "",
+  menuItems: [],
+  pages: [],
 };
 export interface IStateData {
   [key: string]: IData;

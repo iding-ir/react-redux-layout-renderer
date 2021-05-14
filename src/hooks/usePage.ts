@@ -5,7 +5,7 @@ export const usePage = (pages: IPage[], slug: string) => {
     (page: IPage) => page.slug === slug
   )[0];
 
-  const { id, title, content } = page || {};
+  const { id, title, content, background } = page || {};
 
-  return { page, id, title, content };
+  return { page, id, title, content, background };
 };

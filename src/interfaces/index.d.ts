@@ -19,15 +19,16 @@ export interface IPage {
   content: string;
   icon: string;
   slug: string;
+  background: string;
 }
 
 export interface IData {
   language: string;
   logo: string;
-  header: IHeader;
-  footer: string;
-  pages: IPage[];
-  menuItems: IMenuItem[];
+  flash: string;
   splash: IHeader;
   notFound: IHeader;
+  footer: string;
+  menuItems: IMenuItem[];
+  pages: IPage[];
 }

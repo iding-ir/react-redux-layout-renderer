@@ -8,6 +8,7 @@ import "./Page.scss";
 import { IPage } from "../../interfaces";
 import { IState } from "../../reducers";
 import { selectPage, getPageContent } from "../../actions/page";
+import { useData } from "../../hooks/useData";
 import { usePage } from "../../hooks/usePage";
 import { setLanguage } from "../../actions/settings";
 
@@ -22,11 +23,13 @@ const Page = (props: Props) => {
 
   const { language, slug } = useParams() as any;
 
-  const flash = useSelector((state: IState) => state.flash.visible);
+  const data = useSelector((state: IState) => state.data);
+  const flashVisible = useSelector((state: IState) => state.flash.visible);
   const pageContent = useSelector((state: IState) => state.page.content);
   const settings = useSelector((state: IState) => state.settings);
 
-  const { page, id, title, content } = usePage(pages, slug);
+  const { flash } = useData(data, language);
+  const { page, id, title, content, background } = usePage(pages, slug);
 
   useEffect(() => {
     dispatch(selectPage(id));
@@ -51,18 +54,27 @@ const Page = (props: Props) => {
   }
 
   const classes = classnames("page", {
-    "is-flashing": flash,
+    "is-flashing": flashVisible,
   });
+
+  const styles = {
+    content: {
+      backgroundImage: `url("${background}")`,
+    },
+    flash: {
+      backgroundImage: `url("${flash}")`,
+    },
+  };
 
   return (
     <div className={classes}>
       <div className="title">{title}</div>
 
-      <div className="content">
+      <div className="content" style={styles.content}>
         <MarkdownView markdown={pageContent || ""} />
       </div>
 
-      <div className="flash"></div>
+      <div className="flash" style={styles.flash}></div>
     </div>
   );
 };

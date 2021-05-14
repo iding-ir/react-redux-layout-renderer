@@ -1,10 +1,11 @@
 import { IStateData } from "../reducers/data";
 import { initialData } from "../reducers/data";
 
-export const useData = (data: IStateData, language: string) => {
-  const currentData = data[language] || initialData;
+export const useData = (data: IStateData, lang: string) => {
+  const currentData = data[lang] || initialData;
 
-  const { splash, pages, footer, notFound, menuItems } = currentData;
+  const { language, logo, flash, splash, notFound, footer, menuItems, pages } =
+    currentData;
 
-  return { splash, pages, footer, notFound, menuItems };
+  return { language, logo, flash, splash, notFound, footer, menuItems, pages };
 };
