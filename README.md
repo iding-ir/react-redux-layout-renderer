@@ -12,8 +12,8 @@ It uses React, Redux, SASS and no CSS framework to demonstrate my front-end skil
 
 ## Demo
 
-[Live demo](http://react-redux-layout-renderer.iding.ir)
-[iding.ir](http://iding.ir)
+- [Live demo](http://react-redux-layout-renderer.iding.ir)
+- [iding.ir](http://iding.ir)
 
 ## Data structure
 
