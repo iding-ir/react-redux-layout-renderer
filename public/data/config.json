@@ -41,7 +41,7 @@
       },
       {
         "id": 2,
-        "slug": "en-sodales",
+        "slug": "en-non-sodales",
         "icon": "data/en/icons/non-sodales.svg",
         "title": "[EN] Non sodales",
         "content": "data/en/pages/non-sodales.md",
